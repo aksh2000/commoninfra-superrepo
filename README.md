@@ -48,4 +48,6 @@ management:
       ```
    8. You can see your registry's status at [Eureka Dashboard](http://10.177.68.70:8761/)
    
-   9. For Further Assistance - Reach Common Infra Team at B - Basement
+   9. PLEASE MAKE SURE YOU ARE CONNECTED TO **BIBLI CORP WIFI**
+   
+   10. For Further Assistance - Reach Common Infra Team at B - Basement
