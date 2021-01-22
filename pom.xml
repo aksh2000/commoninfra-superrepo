@@ -13,6 +13,7 @@
     <java.version>1.8</java.version>
   </properties>
 
+
   <name>common-infra</name>
   <packaging>pom</packaging>
 
