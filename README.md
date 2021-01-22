@@ -10,7 +10,7 @@ Super Repo for Backend Services for -Pagebook -Quora -CMS -CRM -Hungry
   1. Clone the main branch
   2. Create a new branch from main branch
   3. Add your spring boot application folder with required dependencies [Java 8, JAR, Spring Boot 2.4.2]
-  4. GoTo commoninfra-superrepo -> pom.xml and add your application name in the modules section :::: application name should be same as artifact Id in your application folders pom.xml
+  4. GoTo commoninfra-superrepo -> pom.xml and add your application name in the modules section ```<module>business</module>```
   5. Create a application.yml file in resources folder of your springboot application
   6. Add the following configuration in the application.yml file
 
@@ -44,7 +44,7 @@ management:
       - id: pagebook-business
         uri: lb://pagebook-business
         predicates:
-        -Path=/pagebook/api/business/**
+        -Path=/pagebook/business/**
       ```
    8. You can see your registry's status at [Eureka Dashboard](http://10.177.68.70:8761/)
    
