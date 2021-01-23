@@ -18,5 +18,4 @@ public class QuizSubscribers {
     Date userEndTime;
     int status;
 
-
 }
