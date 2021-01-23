@@ -16,7 +16,7 @@ public class Quiz {
     Long quizId;
     String adminId;
     String name;
-    String type;
+    int type;
     String category;
     int size;
     int duration;
