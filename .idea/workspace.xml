@@ -4,14 +4,24 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c6e6569-11e8-4e99-b5ab-43b7c2421a48" name="Default" comment="--cms --added entities">
+    <list default="true" id="2c6e6569-11e8-4e99-b5ab-43b7c2421a48" name="Default" comment="--cms --quiz type changed to integer">
+      <change afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/CategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizLeaderBoardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizQuestionsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizResponsesRepositry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizSubscribersRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/repository/AdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/repository/AdminRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/IAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/IAdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/implementation/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/implementation/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-log/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cms-log/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizLeaderBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizLeaderBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizQuestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizResponses.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizResponses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizSubscribers.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizSubscribers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-user/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cms-user/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -33,6 +43,14 @@
         <entry key="$PROJECT_DIR$" value="web-ui" />
       </map>
     </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -111,7 +129,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor.code.editing" />
   </component>
   <component name="RunManager">
     <configuration name="CmsAdminApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -204,7 +222,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611392236788</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="--cms --quiz type changed to integer">
+      <created>1611394152534</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1611394152534</updated>
+    </task>
+    <task id="LOCAL-00007" summary="--cms --quiz type changed to integer">
+      <created>1611394305247</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1611394305247</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -243,7 +275,8 @@
     <MESSAGE value="--branch --publish" />
     <MESSAGE value="--cms --added structures --stable" />
     <MESSAGE value="--cms --added entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="--cms --added entities" />
+    <MESSAGE value="--cms --quiz type changed to integer" />
+    <option name="LAST_COMMIT_MESSAGE" value="--cms --quiz type changed to integer" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">

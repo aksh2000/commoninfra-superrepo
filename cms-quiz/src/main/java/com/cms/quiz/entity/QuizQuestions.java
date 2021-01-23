@@ -8,7 +8,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "quizQuestions")
 public class QuizQuestions {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Long quizQuestionId;
     Long quizId;
     Long questionId;
 }
