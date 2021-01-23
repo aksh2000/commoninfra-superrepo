@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface QuizQuestionsRepository extends JpaRepository<QuizQuestions,Long> {
     List<QuizQuestions> findByQuizId(Long quizId);
+
+    QuizQuestions deleteByQuizIdAndQuestionId(Long quizId, Long questionId);
 }

@@ -6,6 +6,7 @@ import com.cms.quiz.service.IQuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,5 +28,10 @@ public class QuizServiceImpl implements IQuizService {
     @Override
     public Optional<Quiz> getQuizDetails(Long quizId) {
         return quizRepository.findById(quizId);
+    }
+
+    @Override
+    public List<Quiz> getQuizListByAdminId(String adminId) {
+        return quizRepository.findByAdminId(adminId);
     }
 }
