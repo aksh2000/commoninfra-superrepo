@@ -5,6 +5,7 @@ import com.cms.quiz.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.ws.rs.Path;
 import java.util.List;
 import java.util.Optional;
 
@@ -81,5 +82,16 @@ public class QuizController {
     List<QuizSubscribers> getQuizSubscribers(@PathVariable("quizId") Long quizId ){
         return iQuizSubscriberService.getQuizSubscribers(quizId);
     }
+
+    @DeleteMapping("/deleteQuestion/{quizId}/{questionId}")
+    public QuizQuestions deleteQuestion(@PathVariable("quizId") Long quizId,@PathVariable("questionId") Long questionId){
+        return iQuizQuestionsService.deleteQuestion(quizId,questionId);
+    }
+
+    @GetMapping("getQuizListByAdminId/{adminId}")
+    List<Quiz> getQuizListByAdminId(@PathVariable("adminId") String adminId){
+        return iQuizService.getQuizListByAdminId(adminId);
+    }
+
 
 }

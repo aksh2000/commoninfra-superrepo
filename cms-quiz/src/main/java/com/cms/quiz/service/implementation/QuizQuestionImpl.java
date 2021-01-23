@@ -22,4 +22,9 @@ public class QuizQuestionImpl implements IQuizQuestionsService {
     public List<QuizQuestions> getQuizQuestions(Long quizId) {
         return quizQuestionsRepository.findByQuizId(quizId);
     }
+
+    @Override
+    public QuizQuestions deleteQuestion(Long quizId, Long questionId) {
+        return quizQuestionsRepository.deleteByQuizIdAndQuestionId(quizId,questionId);
+    }
 }
