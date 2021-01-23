@@ -19,6 +19,14 @@ public class User {
     String phone;
 
 
+
+
+
+
+
+
+
+
 }
 
 
