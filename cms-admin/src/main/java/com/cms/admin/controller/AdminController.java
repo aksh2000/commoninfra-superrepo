@@ -7,6 +7,7 @@ import com.cms.admin.service.IQuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -38,5 +39,8 @@ public class AdminController {
     public Questions saveQuestion(@RequestBody Questions questions){
         return iQuestionService.saveQuestions(questions);
     }
-
+    @GetMapping(value = "/getQuestionsByCategory/{categoryId}")
+    List<Questions> findByCategoryId(@PathVariable("categoryId") Long categoryId){
+        return iQuestionService.findByCategoryId(categoryId);
+    }
 }

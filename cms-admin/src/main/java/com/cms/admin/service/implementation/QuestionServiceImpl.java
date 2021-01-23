@@ -5,6 +5,7 @@ import com.cms.admin.repository.QuestionRepository;
 import com.cms.admin.service.IQuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
 import java.util.Optional;
 
 public class QuestionServiceImpl implements IQuestionService {
@@ -18,5 +19,10 @@ public class QuestionServiceImpl implements IQuestionService {
     @Override
     public Questions saveQuestions(Questions questions) {
         return questionRepository.save(questions);
+    }
+
+    @Override
+    public List<Questions> findByCategoryId(Long categoryId) {
+        return questionRepository.findByCategoryId(categoryId);
     }
 }
