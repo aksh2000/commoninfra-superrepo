@@ -6,14 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cms-admin" />
+        <module name="cms-log" />
+        <module name="cms-quiz" />
+        <module name="cms-user" />
         <module name="gateway" />
         <module name="registry" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cms-admin" target="1.8" />
+      <module name="cms-log" target="1.8" />
+      <module name="cms-quiz" target="1.8" />
+      <module name="cms-user" target="1.8" />
       <module name="common-infra" target="1.5" />
-      <module name="gateway" target="1.8" />
-      <module name="registry" target="1.8" />
+      <module name="gateway" target="1.5" />
+      <module name="registry" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

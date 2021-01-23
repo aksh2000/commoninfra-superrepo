@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/cms-admin/cms-admin.iml" filepath="$PROJECT_DIR$/cms-admin/cms-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cms-log/cms-log.iml" filepath="$PROJECT_DIR$/cms-log/cms-log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cms-quiz/cms-quiz.iml" filepath="$PROJECT_DIR$/cms-quiz/cms-quiz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cms-user/cms-user.iml" filepath="$PROJECT_DIR$/cms-user/cms-user.iml" />
       <module fileurl="file://$PROJECT_DIR$/common-infra.iml" filepath="$PROJECT_DIR$/common-infra.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/registry/registry.iml" filepath="$PROJECT_DIR$/registry/registry.iml" />
       <module fileurl="file://$PROJECT_DIR$/registry/registry.iml" filepath="$PROJECT_DIR$/registry/registry.iml" />
     </modules>
   </component>

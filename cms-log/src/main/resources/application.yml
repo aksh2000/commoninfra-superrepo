@@ -1,0 +1,22 @@
+server:
+    port: 9004
+
+spring:
+    application:
+        name: CMS-LOG
+
+eureka:
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://10.177.68.70:8761/eureka}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - mappings
+          - env
+          - health
+          - info
