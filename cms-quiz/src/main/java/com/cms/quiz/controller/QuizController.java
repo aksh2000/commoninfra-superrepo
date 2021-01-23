@@ -1,9 +1,7 @@
 package com.cms.quiz.controller;
 
-import com.cms.quiz.entity.Quiz;
-import com.cms.quiz.entity.QuizResponses;
-import com.cms.quiz.service.IQuizResponse;
-import com.cms.quiz.service.IQuizService;
+import com.cms.quiz.entity.*;
+import com.cms.quiz.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,14 +16,23 @@ public class QuizController {
     IQuizService iQuizService;
 
     @Autowired
-    IQuizResponse iQuizResponse;
+    IQuizResponseService iQuizResponse;
 
-    @GetMapping(value = "/getQuizDetails/{quizId}")
+    @Autowired
+    ICategoryService iCategoryService;
+
+    @Autowired
+    IQuizQuestionsService iQuizQuestionsService;
+
+    @Autowired
+    IQuizSubscriberService iQuizSubscriberService;
+
+    @GetMapping("/getQuizDetails/{quizId}")
     public Optional<Quiz> findById(@PathVariable("quizId") Long quizId){
         return iQuizService.findById(quizId);
     }
 
-    @PostMapping(value = "/addQuizResponse")
+    @PostMapping("/addQuizResponse")
     public QuizResponses addQuizResponse(@RequestBody QuizResponses quizResponses){
         return iQuizResponse.addQuizResponse(quizResponses);
     }
@@ -33,6 +40,46 @@ public class QuizController {
     @GetMapping("/getUserResponsesByUserIdAndQuizId/{userId}/{quizId}")
     List<QuizResponses> findByUserIdAndQuizId(@PathVariable("userId") String userId, @PathVariable("quizId") Long quizId){
         return iQuizResponse.findByUserIdAndQuizId(userId, quizId);
+    }
+
+    @PostMapping("/addQuiz")
+    Quiz addQuiz(@RequestBody Quiz quiz){
+        return iQuizService.addQuiz(quiz);
+    }
+
+    @GetMapping("/getQuizDetails/{quizId}")
+    Optional<Quiz> getQuizDetails(@PathVariable("quizId") Long quizId){
+        return iQuizService.getQuizDetails(quizId);
+    }
+
+    @PostMapping("/addCategory")
+    Category addCategory(@RequestBody Category category){
+        return iCategoryService.addCategory(category);
+    }
+
+    @GetMapping("/getCategoryDetails/{categoryId}")
+    Optional<Category> getCategoryDetails(@PathVariable("categoryId") Long categoryId){
+        return iCategoryService.getCategoryDetails(categoryId);
+    }
+
+    @PostMapping("/addQuizQuestion")
+    QuizQuestions addQuizQuestion(@RequestBody QuizQuestions quizQuestions){
+        return iQuizQuestionsService.addQuizQuestion(quizQuestions);
+    }
+
+    @GetMapping("/getQuizQuestions/{quizId}")
+    List<QuizQuestions> getQuizQuestions(@PathVariable Long quizId){
+        return iQuizQuestionsService.getQuizQuestions(quizId);
+    }
+
+    @PostMapping("/addQuizSubscriber")
+    QuizSubscribers addQuizSubscriber(@RequestBody QuizSubscribers quizSubscribers){
+        return iQuizSubscriberService.addQuizSubscriber(quizSubscribers);
+    }
+
+    @GetMapping("getQuizSubscribers/{quizId}")
+    List<QuizSubscribers> getQuizSubscribers(@PathVariable("quizId") Long quizId ){
+        return iQuizSubscriberService.getQuizSubscribers(quizId);
     }
 
 }
