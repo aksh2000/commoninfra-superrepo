@@ -17,7 +17,7 @@ public class AdminController {
     @GetMapping(value = "/getAdminDetails/{adminId}")
     public Optional<Admin> findById(@PathVariable("adminId") Long adminId){
         return iAdminService.findById(adminId);
-    };
+    }
 
     @PostMapping(value = "/add")
     public Admin addAdmin(@RequestBody Admin admin){
