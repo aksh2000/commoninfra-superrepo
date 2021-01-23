@@ -1,7 +1,6 @@
 package com.cms.quiz.service.implementation;
 
 import com.cms.quiz.entity.QuizResponses;
-import com.cms.quiz.repository.QuizResponsesRepositry;
 import com.cms.quiz.service.IQuizResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
