@@ -11,6 +11,7 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_SERVER:http://10.177.68.9:8761/eureka}
 
+
 management:
   endpoints:
     web:
