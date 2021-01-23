@@ -15,7 +15,17 @@ public class QuizServiceImpl implements IQuizService {
     QuizRepository quizRepository;
 
     @Override
+    public Quiz addQuiz(Quiz quiz) {
+        return quizRepository.save(quiz);
+    }
+
+    @Override
     public Optional<Quiz> findById(Long quizId) {
+        return quizRepository.findById(quizId);
+    }
+
+    @Override
+    public Optional<Quiz> getQuizDetails(Long quizId) {
         return quizRepository.findById(quizId);
     }
 }
