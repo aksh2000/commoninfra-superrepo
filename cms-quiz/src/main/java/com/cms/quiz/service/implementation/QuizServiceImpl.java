@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class QuizService implements IQuizService {
+public class QuizServiceImpl implements IQuizService {
 
     @Autowired
     QuizRepository quizRepository;
