@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c6e6569-11e8-4e99-b5ab-43b7c2421a48" name="Default" comment="--cms --added entities">
-      <change beforePath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/service/implementation/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/service/implementation/UserService.java" afterDir="false" />
+    <list default="true" id="2c6e6569-11e8-4e99-b5ab-43b7c2421a48" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +21,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -55,6 +62,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/controller/AdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="IUserService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/service/IUserService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,7 +83,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/service/implementation/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -90,24 +106,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cms-admin/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cms-log/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -161,6 +159,7 @@
         <option value="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/controller/UserController.java" />
         <option value="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/service/IUserService.java" />
         <option value="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/service/implementation/UserService.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -190,11 +189,6 @@
             <path>
               <item name="common-infra" type="b2602c69:ProjectViewProjectNode" />
               <item name="commoninfra-superrepo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="common-infra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="commoninfra-superrepo" type="462c0819:PsiDirectoryNode" />
-              <item name="cms-user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -335,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611391900554</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="--cms --added --">
+      <created>1611395312202</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611395312202</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -347,9 +348,9 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50143063" side_tool="true" visible="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49928468" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4985694" visible="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -422,12 +423,10 @@
     <MESSAGE value="--branch --publish" />
     <MESSAGE value="--cms --added structures --stable" />
     <MESSAGE value="--cms --added entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="--cms --added entities" />
+    <MESSAGE value="--cms --added --" />
+    <option name="LAST_COMMIT_MESSAGE" value="--cms --added --" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -669,15 +668,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        <state relative-caret-position="270">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -791,6 +783,20 @@
             <element signature="e#587#588#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/Quiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
