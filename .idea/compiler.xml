@@ -7,11 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cms-admin" />
-        <module name="cms-log" />
-        <module name="cms-quiz" />
-        <module name="cms-user" />
-        <module name="gateway" />
         <module name="registry" />
+        <module name="cms-quiz" />
+        <module name="cms-log" />
+        <module name="gateway" />
+        <module name="cms-user" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,8 +20,18 @@
       <module name="cms-quiz" target="1.8" />
       <module name="cms-user" target="1.8" />
       <module name="common-infra" target="1.5" />
-      <module name="gateway" target="1.5" />
-      <module name="registry" target="1.5" />
+      <module name="gateway" target="1.8" />
+      <module name="registry" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cms-admin" options="-parameters" />
+      <module name="cms-log" options="-parameters" />
+      <module name="cms-quiz" options="-parameters" />
+      <module name="cms-user" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="registry" options="-parameters" />
+    </option>
   </component>
 </project>

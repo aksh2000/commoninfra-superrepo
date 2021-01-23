@@ -2,10 +2,16 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/cms-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cms-log" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-log/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cms-quiz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-quiz/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cms-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-user/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/registry" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/registry/src/main/java" charset="UTF-8" />
   </component>
 </project>
