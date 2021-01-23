@@ -46,7 +46,7 @@ management:
         predicates:
         -Path=/pagebook/business/**
       ```
-   8. You can see your registry's status at [Eureka Dashboard](http://10.177.68.70:8761/)
+   8. You can see your registry's status at [Eureka Dashboard](http://10.177.68.9:8761/)
    
    9. PLEASE MAKE SURE YOU ARE CONNECTED TO **BIBLI CORP WIFI**
    
