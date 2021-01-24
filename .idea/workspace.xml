@@ -5,17 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ab4801c-17bf-4881-b514-01dc8379eaa7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/entity/NonScreenedQuestions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/repository/NonScreenedQuestionsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/INonScreenedQuestionsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/implementation/NonScreenedQuestionsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/repository/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/repository/QuestionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/IQuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/IQuestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/implementation/QuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/implementation/QuestionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/Category.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
