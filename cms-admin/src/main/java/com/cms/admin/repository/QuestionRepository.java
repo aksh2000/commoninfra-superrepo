@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface QuestionRepository extends JpaRepository<Questions,Long> {
     List<Questions> findByCategoryId(Long categoryId);
+
+    List<Questions> findByCategoryIdAndType(long categoryId, int type);
 }

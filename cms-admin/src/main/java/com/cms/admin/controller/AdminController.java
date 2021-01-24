@@ -45,4 +45,10 @@ public class AdminController {
         return iQuestionService.getQuestionsByCategory(categoryId);
     }
 
+    @GetMapping(value = "/getQuestionsByCategoryAndType/{categoryId}/{type}")
+    public List<Questions> getQuestionsByCategoryAndType(@PathVariable("categoryId") long categoryId,
+                                                         @PathVariable("type")int type){
+        return iQuestionService.getQuestionsByCategoryAndType(categoryId,type);
+    }
+
 }
