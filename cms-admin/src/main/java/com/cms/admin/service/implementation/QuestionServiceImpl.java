@@ -33,4 +33,9 @@ public class QuestionServiceImpl implements IQuestionService {
     public List<Questions> getQuestionsByCategory(long categoryId) {
         return questionRepository.findByCategoryId(categoryId);
     }
+
+    @Override
+    public List<Questions> getQuestionsByCategoryAndType(long categoryId, int type) {
+        return questionRepository.findByCategoryIdAndType(categoryId,type);
+    }
 }
