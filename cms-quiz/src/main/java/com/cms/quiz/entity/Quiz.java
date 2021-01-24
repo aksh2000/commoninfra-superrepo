@@ -12,12 +12,12 @@ import java.util.Date;
 @Data
 public class Quiz {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long quizId;
     private String adminId;
     private String name;
     private int type;
-    private String category;
+    private Long  categoryId;
     private int size;
     private int duration;
     private Date startTime;

@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class QuizLeaderBoard {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long leaderBoardId;
     private Long quizId;
     private String userId;
