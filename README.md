@@ -27,7 +27,7 @@ eureka:
   client:
     registerWithEureka: true
     serviceUrl:
-      defaultZone: ${EUREKA_SERVER:http://10.177.68.9:8761/eureka}
+      defaultZone: ${EUREKA_SERVER:http://10.177.2.21:8761/eureka}
 
 management:
   endpoints:
@@ -49,7 +49,7 @@ management:
         predicates:
         -Path=/pagebook/business/**
       ```
-   8. You can see your registry's status at [Eureka Dashboard](http://10.177.68.9:8761/)
+   8. You can see your registry's status at [Eureka Dashboard](http://10.177.2.21:8761/)
    
    9. PLEASE MAKE SURE YOU ARE CONNECTED TO **BIBLI CORP WIFI**
    
