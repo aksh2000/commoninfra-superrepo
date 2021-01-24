@@ -1,6 +1,9 @@
 # commoninfra-superrepo
 Super Repo for Backend Services for -Pagebook -Quora -CMS -CRM -Hungry
 
+## IP ADDRESS - 24 JAN
+10.177.2.21 (BIBLI CORP)
+
 ## Common Dependencies
   - `Eureka Discovery Client`
   - `OAuth2 Resource Server`. Add this depedency upon common infra teams intimation, There is a seperate process to configure when OAuth is involved, Team is still working on it
