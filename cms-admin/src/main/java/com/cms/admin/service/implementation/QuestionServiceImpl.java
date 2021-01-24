@@ -6,6 +6,7 @@ import com.cms.admin.service.IQuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,5 +24,13 @@ public class QuestionServiceImpl implements IQuestionService {
         return questionRepository.save(questions);
     }
 
+    @Override
+    public List<Questions> findByCategoryId(Long categoryId) {
+        return questionRepository.findByCategoryId(categoryId);
+    }
 
+    @Override
+    public List<Questions> getQuestionsByCategory(long categoryId) {
+        return questionRepository.findByCategoryId(categoryId);
+    }
 }

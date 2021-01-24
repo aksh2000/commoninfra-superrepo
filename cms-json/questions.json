@@ -1,0 +1,12 @@
+{
+  "content": "2+2",
+  "level": 1,
+  "type": 0,
+  "categoryId": 1,
+  "optionA": "1",
+  "optionB": "2",
+  "optionC": "4",
+  "rightAnswer": "4",
+  "noOfCorrectAttempt": 0,
+  "maxTime": 4
+}

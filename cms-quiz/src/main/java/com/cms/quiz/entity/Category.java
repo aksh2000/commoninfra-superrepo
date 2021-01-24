@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Lock;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "category")
+@Table(name = "cms_category")
 @Data
 public class Category {
     @Id
