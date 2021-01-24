@@ -16,7 +16,7 @@ public class UserController {
     IUserService iUserService;
 
     @GetMapping(value = "/getUserDetails/{userId}")
-    public Optional<User> findById(@PathVariable("userId") Long userId){
+    public Optional<User> findById(@PathVariable("userId") String userId){
         return iUserService.findById(userId);
     }
 

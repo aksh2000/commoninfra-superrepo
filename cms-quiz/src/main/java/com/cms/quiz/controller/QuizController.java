@@ -48,10 +48,10 @@ public class QuizController {
         return iQuizService.addQuiz(quiz);
     }
 
-    @GetMapping(value = "/getQuizDetails/{quizId}")
-    Optional<Quiz> getQuizDetails(@PathVariable("quizId") Long quizId){
-        return iQuizService.getQuizDetails(quizId);
-    }
+//    @GetMapping(value = "/getQuizDetails/{quizId}")
+//    Optional<Quiz> getQuizDetails(@PathVariable("quizId") Long quizId){
+//        return iQuizService.getQuizDetails(quizId);
+//    }
 
     @PostMapping(value = "/addCategory")
     Category addCategory(@RequestBody Category category){

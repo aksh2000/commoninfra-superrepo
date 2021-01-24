@@ -5,7 +5,7 @@ import com.cms.user.entity.User;
 import java.util.Optional;
 
 public interface IUserService {
-    Optional<User> findById(Long userId);
+    Optional<User> findById(String userId);
 
     User addUser(User user);
 }
