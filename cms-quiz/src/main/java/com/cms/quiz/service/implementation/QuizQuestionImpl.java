@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class QuizQuestionImpl implements IQuizQuestionsService {
@@ -24,7 +23,7 @@ public class QuizQuestionImpl implements IQuizQuestionsService {
     }
 
     @Override
-    public QuizQuestions deleteQuestion(Long quizId, Long questionId) {
+    public List<QuizQuestions> deleteQuestion(Long quizId, Long questionId) {
         return quizQuestionsRepository.deleteByQuizIdAndQuestionId(quizId,questionId);
     }
 }

@@ -16,11 +16,11 @@ public class UserController {
     IUserService iUserService;
 
     @GetMapping(value = "/getUserDetails/{userId}")
-    public Optional<User> findById(@PathVariable("userId") Long userId){
+    public Optional<User> findById(@PathVariable("userId") String userId){
         return iUserService.findById(userId);
     }
 
-    @PostMapping(value = "/add")
+    @PostMapping(value = "/addUser")
     public User addUser(@RequestBody User user){
         return iUserService.addUser(user);
     }

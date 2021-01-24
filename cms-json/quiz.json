@@ -1,0 +1,21 @@
+[
+  {
+    "adminId": "1",
+    "name": "Maths Quiz",
+    "type": 0,
+    "category": 0,
+    "size": 10,
+    "duration": 45
+
+  },
+  {
+  "adminId": "1",
+  "name": "English Quiz",
+  "type": 1,
+  "category": 1,
+  "size": 5,
+  "duration": 20
+
+  }
+
+]

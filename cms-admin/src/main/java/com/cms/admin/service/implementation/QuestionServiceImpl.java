@@ -28,4 +28,9 @@ public class QuestionServiceImpl implements IQuestionService {
     public List<Questions> findByCategoryId(Long categoryId) {
         return questionRepository.findByCategoryId(categoryId);
     }
+
+    @Override
+    public List<Questions> getQuestionsByCategory(long categoryId) {
+        return questionRepository.findByCategoryId(categoryId);
+    }
 }

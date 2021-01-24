@@ -5,10 +5,12 @@ import com.cms.quiz.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import javax.ws.rs.Path;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/cmsQuiz")
 public class QuizController {
@@ -48,10 +50,10 @@ public class QuizController {
         return iQuizService.addQuiz(quiz);
     }
 
-    @GetMapping(value = "/getQuizDetails/{quizId}")
-    Optional<Quiz> getQuizDetails(@PathVariable("quizId") Long quizId){
-        return iQuizService.getQuizDetails(quizId);
-    }
+//    @GetMapping(value = "/getQuizDetails/{quizId}")
+//    Optional<Quiz> getQuizDetails(@PathVariable("quizId") Long quizId){
+//        return iQuizService.getQuizDetails(quizId);
+//    }
 
     @PostMapping(value = "/addCategory")
     Category addCategory(@RequestBody Category category){
@@ -83,8 +85,9 @@ public class QuizController {
         return iQuizSubscriberService.getQuizSubscribers(quizId);
     }
 
+    @Transactional
     @DeleteMapping(value = "/deleteQuestion/{quizId}/{questionId}")
-    public QuizQuestions deleteQuestion(@PathVariable("quizId") Long quizId,@PathVariable("questionId") Long questionId){
+    public List<QuizQuestions> deleteQuestion(@PathVariable("quizId") Long quizId,@PathVariable("questionId") Long questionId){
         return iQuizQuestionsService.deleteQuestion(quizId,questionId);
     }
 
@@ -93,5 +96,8 @@ public class QuizController {
         return iQuizService.getQuizListByAdminId(adminId);
     }
 
-
+    @GetMapping(value = "/getAllCategories")
+    public List<Category> getAllCategories() {
+        return iCategoryService.findAll();
+    }
 }

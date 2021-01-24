@@ -15,7 +15,7 @@ public class UserService implements IUserService {
     UserRepository userRepository;
 
     @Override
-    public Optional<User> findById(Long userId) {
+    public Optional<User> findById(String userId) {
         return userRepository.findById(userId);
     }
 

@@ -12,4 +12,6 @@ public interface IQuestionService {
     Questions saveQuestions(Questions questions);
 
     List<Questions> findByCategoryId(Long categoryId);
+
+    List<Questions> getQuestionsByCategory(long categoryId);
 }
