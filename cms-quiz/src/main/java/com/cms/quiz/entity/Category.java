@@ -11,6 +11,6 @@ import javax.persistence.*;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long categoryId;
-    String name;
+    private Long categoryId;
+    private String name;
 }

@@ -20,7 +20,7 @@ public class UserController {
         return iUserService.findById(userId);
     }
 
-    @PostMapping("/add")
+    @PostMapping(value = "/add")
     public User addUser(@RequestBody User user){
         return iUserService.addUser(user);
     }

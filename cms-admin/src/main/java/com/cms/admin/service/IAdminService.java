@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 @Service
 public interface IAdminService {
-    Optional<Admin> findById(Long adminId);
+    Optional<Admin> findById(String adminId);
 
     Admin addAdmin(Admin admin);
 }

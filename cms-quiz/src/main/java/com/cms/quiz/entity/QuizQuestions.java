@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class QuizQuestions {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long quizQuestionId;
-    Long quizId;
-    Long questionId;
+    private Long quizQuestionId;
+    private Long quizId;
+    private Long questionId;
 }

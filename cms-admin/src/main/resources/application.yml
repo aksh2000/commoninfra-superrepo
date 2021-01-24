@@ -11,15 +11,6 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_SERVER:http://10.177.2.21:8761/eureka}
 
-#eureka:
-#  client:
-#    register-with-eureka: true
-#    fetch-registry: true
-#    service-url:
-#      defaultZone: http://localhost:8761/eureka
-#  instance:
-#    hostname: localhost
-
 management:
   endpoints:
     web:

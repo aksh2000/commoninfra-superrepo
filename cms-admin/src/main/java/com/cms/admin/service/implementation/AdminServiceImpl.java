@@ -13,7 +13,7 @@ public class AdminServiceImpl implements IAdminService {
     @Autowired
     AdminRepository adminRepository;
     @Override
-    public Optional<Admin> findById(Long adminId) {
+    public Optional<Admin> findById(String adminId) {
         return adminRepository.findById(adminId);
     }
 

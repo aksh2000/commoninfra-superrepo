@@ -13,13 +13,13 @@ import java.util.Date;
 public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long quizId;
-    String adminId;
-    String name;
-    int type;
-    String category;
-    int size;
-    int duration;
-    Date startTime;
-    Date endTime;
+    private Long quizId;
+    private String adminId;
+    private String name;
+    private int type;
+    private String category;
+    private int size;
+    private int duration;
+    private Date startTime;
+    private Date endTime;
 }

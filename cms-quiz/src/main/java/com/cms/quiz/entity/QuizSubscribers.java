@@ -11,11 +11,11 @@ import java.util.Date;
 public class QuizSubscribers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long quizSubscriberId;
-    Long quizId;
-    String userId;
-    Date userStartTime;
-    Date userEndTime;
-    int status;
+    private Long quizSubscriberId;
+    private Long quizId;
+    private String userId;
+    private Date userStartTime;
+    private Date userEndTime;
+    private int status;
 
 }
