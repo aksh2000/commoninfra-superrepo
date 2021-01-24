@@ -7,6 +7,11 @@ spring:
   cloud:
     gateway:
       routes:
+      - id: pagebook-business
+        uri: lb://pagebook-business
+        predicates:
+        - Path=/pagebook/api/business/**
+
       - id: registry
         uri: lb://registry
         predicates:
@@ -18,6 +23,51 @@ spring:
         uri: lb://registry
         predicates:
         - Path=/eureka/**
+
+      - id: CMS-ADMIN
+        uri: lb://CMS-ADMIN
+        predicates:
+        - Path=/cmsAdmin/**
+
+      - id: CMS-USER
+        uri: lb://CMS-USER
+        predicates:
+        - Path=/cmsUser/**
+
+      - id: CMS-LOG
+        uri: lb://CMS-LOG
+        predicates:
+        - Path=/cmsLog/**
+
+      - id: CMS-QUIZ
+        uri: lb://CMS-QUIZ
+        predicates:
+        - Path=/cmsQuiz/**
+
+      - id: CRM-TICKET
+        uri: lb://CRM-TICKET
+        predicates:
+        - Path=/ticket/**
+
+      - id: CRM-LEAD
+        uri: lb://CRM-LEAD
+        predicates:
+        - Path=/lead/**
+
+      - id: CRM_ORGANISATION
+        uri: lb://CRM-ORGANISATION
+        predicates:
+        - Path=/crmorg/**
+
+      - id: COMMON-USERACTIVITY
+        uri: lb://COMMON-USERACTIVITY
+        predicates:
+        - Path=/useractivity/**
+
+      - id: AUTHSERVER
+        uri: lb://AUTH-SERVER
+        predicates:
+        - Path=/auth/**
 
 info:
   app:
@@ -38,3 +88,4 @@ management:
           - env
           - health
           - info
+
