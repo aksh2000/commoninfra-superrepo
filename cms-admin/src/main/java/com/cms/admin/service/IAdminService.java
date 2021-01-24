@@ -5,7 +5,7 @@ import com.cms.admin.entity.Admin;
 import java.util.Optional;
 
 public interface IAdminService {
-    Optional<Admin> findById(Long adminId);
+    Optional<Admin> findById(String adminId);
 
     Admin addAdmin(Admin admin);
 }

@@ -11,9 +11,9 @@ import javax.persistence.Table;
 @Data
 public class Admin {
     @Id
-    String adminId;
-    String firstName;
-    String LastName;
-    String email;
-    String phone;
+    private String adminId;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phone;
 }

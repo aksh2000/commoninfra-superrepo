@@ -28,67 +28,67 @@ public class QuizController {
     @Autowired
     IQuizSubscriberService iQuizSubscriberService;
 
-    @GetMapping("/getQuizDetails/{quizId}")
+    @GetMapping(value = "/getQuizDetails/{quizId}")
     public Optional<Quiz> findById(@PathVariable("quizId") Long quizId){
         return iQuizService.findById(quizId);
     }
 
-    @PostMapping("/addQuizResponse")
+    @PostMapping(value = "/addQuizResponse")
     public QuizResponses addQuizResponse(@RequestBody QuizResponses quizResponses){
         return iQuizResponse.addQuizResponse(quizResponses);
     }
 
-    @GetMapping("/getUserResponsesByUserIdAndQuizId/{userId}/{quizId}")
+    @GetMapping(value = "/getUserResponsesByUserIdAndQuizId/{userId}/{quizId}")
     List<QuizResponses> findByUserIdAndQuizId(@PathVariable("userId") String userId, @PathVariable("quizId") Long quizId){
         return iQuizResponse.findByUserIdAndQuizId(userId, quizId);
     }
 
-    @PostMapping("/addQuiz")
+    @PostMapping(value = "/addQuiz")
     Quiz addQuiz(@RequestBody Quiz quiz){
         return iQuizService.addQuiz(quiz);
     }
 
-    @GetMapping("/getQuizDetails/{quizId}")
+    @GetMapping(value = "/getQuizDetails/{quizId}")
     Optional<Quiz> getQuizDetails(@PathVariable("quizId") Long quizId){
         return iQuizService.getQuizDetails(quizId);
     }
 
-    @PostMapping("/addCategory")
+    @PostMapping(value = "/addCategory")
     Category addCategory(@RequestBody Category category){
         return iCategoryService.addCategory(category);
     }
 
-    @GetMapping("/getCategoryDetails/{categoryId}")
+    @GetMapping(value = "/getCategoryDetails/{categoryId}")
     Optional<Category> getCategoryDetails(@PathVariable("categoryId") Long categoryId){
         return iCategoryService.getCategoryDetails(categoryId);
     }
 
-    @PostMapping("/addQuizQuestion")
+    @PostMapping(value = "/addQuizQuestion")
     QuizQuestions addQuizQuestion(@RequestBody QuizQuestions quizQuestions){
         return iQuizQuestionsService.addQuizQuestion(quizQuestions);
     }
 
-    @GetMapping("/getQuizQuestions/{quizId}")
+    @GetMapping(value = "/getQuizQuestions/{quizId}")
     List<QuizQuestions> getQuizQuestions(@PathVariable Long quizId){
         return iQuizQuestionsService.getQuizQuestions(quizId);
     }
 
-    @PostMapping("/addQuizSubscriber")
+    @PostMapping(value = "/addQuizSubscriber")
     QuizSubscribers addQuizSubscriber(@RequestBody QuizSubscribers quizSubscribers){
         return iQuizSubscriberService.addQuizSubscriber(quizSubscribers);
     }
 
-    @GetMapping("getQuizSubscribers/{quizId}")
+    @GetMapping(value = "getQuizSubscribers/{quizId}")
     List<QuizSubscribers> getQuizSubscribers(@PathVariable("quizId") Long quizId ){
         return iQuizSubscriberService.getQuizSubscribers(quizId);
     }
 
-    @DeleteMapping("/deleteQuestion/{quizId}/{questionId}")
+    @DeleteMapping(value = "/deleteQuestion/{quizId}/{questionId}")
     public QuizQuestions deleteQuestion(@PathVariable("quizId") Long quizId,@PathVariable("questionId") Long questionId){
         return iQuizQuestionsService.deleteQuestion(quizId,questionId);
     }
 
-    @GetMapping("getQuizListByAdminId/{adminId}")
+    @GetMapping(value = "getQuizListByAdminId/{adminId}")
     List<Quiz> getQuizListByAdminId(@PathVariable("adminId") String adminId){
         return iQuizService.getQuizListByAdminId(adminId);
     }

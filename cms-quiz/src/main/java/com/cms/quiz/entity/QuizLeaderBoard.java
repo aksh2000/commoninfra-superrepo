@@ -11,8 +11,8 @@ public class QuizLeaderBoard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long leaderBoardId;
-    Long quizId;
-    String userId;
-    double totalScore;
+    private Long leaderBoardId;
+    private Long quizId;
+    private String userId;
+    private double totalScore;
 }

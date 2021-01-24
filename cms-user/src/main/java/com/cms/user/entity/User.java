@@ -10,23 +10,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "user")
 public class User {
-
     @Id
-    String userId;
-    String firstName;
-    String lastName;
-    String email;
-    String phone;
-
-
-
-
-
-
-
-
-
-
+    private String userId;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phone;
 }
 
 

@@ -10,11 +10,11 @@ import javax.persistence.*;
 public class QuizResponses {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long quizResponseId;
-    Long quizId;
-    String userId;
-    Long questionId;
-    String answer;
-    double responseTime;
-    double questionScore;
+    private Long quizResponseId;
+    private Long quizId;
+    private String userId;
+    private Long questionId;
+    private String answer;
+    private double responseTime;
+    private double questionScore;
 }

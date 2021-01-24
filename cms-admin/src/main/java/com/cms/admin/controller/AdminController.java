@@ -5,7 +5,6 @@ import com.cms.admin.entity.Questions;
 import com.cms.admin.service.IAdminService;
 import com.cms.admin.service.IQuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -21,7 +20,7 @@ public class AdminController {
     IQuestionService iQuestionService;
 
     @GetMapping(value = "/getAdminDetails/{adminId}")
-    public Optional<Admin> findById(@PathVariable("adminId") Long adminId){
+    public Optional<Admin> findById(@PathVariable("adminId") String adminId){
         return iAdminService.findById(adminId);
     }
 
