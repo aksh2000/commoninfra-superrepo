@@ -59,10 +59,7 @@ public class QuizController {
         return iQuizService.addQuiz(quiz);
     }
 
-    @GetMapping(value = "/getQuizDetails/{quizId}")
-    Optional<Quiz> getQuizDetails(@PathVariable("quizId") Long quizId){
-        return iQuizService.getQuizDetails(quizId);
-    }
+
 
     @PostMapping(value = "/addCategory")
     Category addCategory(@RequestBody Category category){
@@ -129,7 +126,7 @@ public class QuizController {
     public List<Quiz> getPreviousQuiz(@PathVariable("adminId") String adminId) {
         List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
         List<Quiz> quizList1 = new ArrayList<>();
-        LocalDateTime date = LocalDateTime.now();
+        Date date = new Date();
         for(Quiz quiz : quizList) {
             if(date.compareTo(quiz.getEndTime())>0) {
                 quizList1.add(quiz);
@@ -142,7 +139,7 @@ public class QuizController {
     public List<Quiz> getCurrentQuiz(@PathVariable("adminId") String adminId) {
         List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
         List<Quiz> quizList1 = new ArrayList<>();
-        LocalDateTime date = LocalDateTime.now();
+        Date date = new Date();
         for(Quiz quiz : quizList) {
             if(date.compareTo(quiz.getEndTime())<0 && date.compareTo(quiz.getStartTime())>0) {
                 quizList1.add(quiz);
@@ -155,7 +152,7 @@ public class QuizController {
     public List<Quiz> getFutureQuiz(@PathVariable("adminId") String adminId) {
         List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
         List<Quiz> quizList1 = new ArrayList<>();
-        LocalDateTime date = LocalDateTime.now();
+        Date date = new Date();
 
         for(Quiz quiz : quizList) {
             System.out.println(quiz.getStartTime());

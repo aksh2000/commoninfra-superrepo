@@ -21,6 +21,6 @@ public class Quiz {
     private Long  categoryId;
     private int size;
     private int duration;
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    private Date startTime;
+    private Date endTime;
 }

@@ -15,8 +15,8 @@ public class QuizSubscribers {
     private Long quizSubscriberId;
     private Long quizId;
     private String userId;
-    private LocalDateTime userStartTime;
-    private LocalDateTime userEndTime;
+    private Date userStartTime;
+    private Date userEndTime;
     private int status;
 
 }

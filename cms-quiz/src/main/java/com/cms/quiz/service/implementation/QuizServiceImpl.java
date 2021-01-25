@@ -6,6 +6,7 @@ import com.cms.quiz.service.IQuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -38,13 +39,13 @@ public class QuizServiceImpl implements IQuizService {
 
     @Override
     public List<Quiz> getStaticQuiz() {
-        Date d=new Date();
-        return quizRepository.getStaticQuiz(d);
+        Date date = new Date();
+        return quizRepository.getStaticQuiz(date,0);
     }
 
     @Override
     public List<Quiz> getDynamicQuiz() {
-        Date d=new Date();
-        return quizRepository.getDynamicQuiz(d);
+        Date date = new Date();
+        return quizRepository.getDynamicQuiz(date,1);
     }
 }
