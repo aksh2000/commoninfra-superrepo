@@ -53,4 +53,8 @@ management:
    
    9. PLEASE MAKE SURE YOU ARE CONNECTED TO **BIBLI CORP WIFI**
    
-   10. For Further Assistance - Reach Common Infra Team at B - Basement
+   10. For Further Assistance - Reach Common Infra Team at D Block - 4 Floor
+   
+   11. Once Registered with gateway, Every API Call is expected to have an Authorization header with jwt token to authorize the api call.
+   
+   12. Please refer **NOTION DOCUMENTATION** to register / authenticate users and understand standart response template
