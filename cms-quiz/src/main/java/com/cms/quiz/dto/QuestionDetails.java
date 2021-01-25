@@ -1,15 +1,9 @@
-package com.cms.admin.entity;
+package com.cms.quiz.dto;
 
 import lombok.Data;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "questions")
 @Data
-public class Questions {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class QuestionDetails {
     private Long questionId;
     private String content;
     private String url;
