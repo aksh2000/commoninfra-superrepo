@@ -41,4 +41,10 @@ public class QuizServiceImpl implements IQuizService {
         Date d=new Date();
         return quizRepository.getStaticQuiz(d);
     }
+
+    @Override
+    public List<Quiz> getDynamicQuiz() {
+        Date d=new Date();
+        return quizRepository.getDynamicQuiz(d);
+    }
 }

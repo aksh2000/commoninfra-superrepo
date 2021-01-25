@@ -111,4 +111,9 @@ public class QuizController {
         return iQuizService.getStaticQuiz();
     }
 
+    @GetMapping(value = "/getDynamicQuiz")
+    public List<Quiz> getDynamicQuiz(){
+        return iQuizService.getDynamicQuiz();
+    }
+
 }

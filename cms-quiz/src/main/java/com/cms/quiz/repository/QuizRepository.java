@@ -14,4 +14,7 @@ public interface QuizRepository extends JpaRepository<Quiz,Long> {
     List<Quiz> findByAdminId(String adminId);
     @Query("select * from quiz q where q.type=0 and q.end_time>?1" )
     List<Quiz> getStaticQuiz(Date d);
+
+    @Query("select * from quiz q where q.type=1 and q.end_time>?1 and q.start_time<?1" )
+    List<Quiz> getDynamicQuiz(Date d);
 }
