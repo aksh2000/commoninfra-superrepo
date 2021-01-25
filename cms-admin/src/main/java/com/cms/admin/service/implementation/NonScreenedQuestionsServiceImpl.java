@@ -11,11 +11,11 @@ public class NonScreenedQuestionsServiceImpl implements INonScreenedQuestionsSer
     @Autowired
     NonScreenedQuestionsRepository nonScreenedQuestionsRepository;
 
-    Optional<NonScreenedQuestions> findFirstElement(){
+    public Optional<NonScreenedQuestions> findFirstElement(){
         return nonScreenedQuestionsRepository.findFirstByOrderByTypeAsc();
     }
 
-    void deleteById(Long questionId){
+    public void deleteById(Long questionId){
          nonScreenedQuestionsRepository.deleteById(questionId);
     }
 }

@@ -1,5 +1,6 @@
 package com.cms.quiz.service.implementation;
 
+import com.cms.quiz.entity.Quiz;
 import com.cms.quiz.entity.QuizSubscribers;
 import com.cms.quiz.repository.QuizSubscribersRepository;
 import com.cms.quiz.service.IQuizSubscriberService;
@@ -21,5 +22,10 @@ public class QuizSubscriberImpl implements IQuizSubscriberService {
     @Override
     public List<QuizSubscribers> getQuizSubscribers(Long quizId) {
         return quizSubscribersRepository.findByQuizId(quizId);
+    }
+
+    @Override
+    public List<Quiz> getSubscribedQuizs(String userId) {
+        return quizSubscribersRepository.findByUserId(userId);
     }
 }

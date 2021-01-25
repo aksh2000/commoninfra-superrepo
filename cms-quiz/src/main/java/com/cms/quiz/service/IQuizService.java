@@ -11,4 +11,8 @@ public interface IQuizService {
     Optional<Quiz> getQuizDetails(Long quizId);
 
     List<Quiz> getQuizListByAdminId(String adminId);
+
+    List<Quiz> getStaticQuiz();
+
+    List<Quiz> getDynamicQuiz();
 }
