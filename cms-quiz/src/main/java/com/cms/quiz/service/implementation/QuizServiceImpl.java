@@ -6,6 +6,7 @@ import com.cms.quiz.service.IQuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,5 +34,11 @@ public class QuizServiceImpl implements IQuizService {
     @Override
     public List<Quiz> getQuizListByAdminId(String adminId) {
         return quizRepository.findByAdminId(adminId);
+    }
+
+    @Override
+    public List<Quiz> getStaticQuiz() {
+        Date d=new Date();
+        return quizRepository.getStaticQuiz(d);
     }
 }

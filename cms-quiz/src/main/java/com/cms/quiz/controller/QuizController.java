@@ -45,6 +45,11 @@ public class QuizController {
         return iQuizResponse.findByUserIdAndQuizId(userId, quizId);
     }
 
+    @GetMapping(value = "/getSubscribedQuizs/{userId}")
+    List<Quiz> getSubscribedQuizs(@PathVariable("userId") String userId){
+        return iQuizSubscriberService.getSubscribedQuizs(userId);
+    }
+
     @PostMapping(value = "/addQuiz")
     Quiz addQuiz(@RequestBody Quiz quiz){
         return iQuizService.addQuiz(quiz);
@@ -100,4 +105,10 @@ public class QuizController {
     public List<Category> getAllCategories() {
         return iCategoryService.findAll();
     }
+
+    @GetMapping(value = "/getStaticQuiz")
+    public List<Quiz> getStaticQuiz(){
+        return iQuizService.getStaticQuiz();
+    }
+
 }

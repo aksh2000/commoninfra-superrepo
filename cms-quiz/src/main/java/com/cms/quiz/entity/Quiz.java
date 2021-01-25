@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 public class Quiz {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long quizId;
     private String adminId;
     private String name;
