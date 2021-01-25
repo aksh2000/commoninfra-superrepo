@@ -1,7 +1,7 @@
 # commoninfra-superrepo
 Super Repo for Backend Services for -Pagebook -Quora -CMS -CRM -Hungry
 
-## IP ADDRESS - 24 JAN
+## IP ADDRESS - 25 JAN
 10.177.2.21 (BIBLI CORP)
 
 ## Common Dependencies
