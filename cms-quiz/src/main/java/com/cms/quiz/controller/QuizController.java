@@ -156,8 +156,7 @@ public class QuizController {
         List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
         List<Quiz> quizList1 = new ArrayList<>();
         LocalDateTime date = LocalDateTime.now();
-        System.out.println(date);
-        System.out.println("*************************");
+
         for(Quiz quiz : quizList) {
             System.out.println(quiz.getStartTime());
             if(date.compareTo(quiz.getStartTime())<0) {
