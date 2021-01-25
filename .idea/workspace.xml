@@ -5,16 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ab4801c-17bf-4881-b514-01dc8379eaa7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/dto/QuestionDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/entity/NonScreenedQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/entity/NonScreenedQuestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/entity/Questions.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/entity/Questions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/CmsQuizApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/CmsQuizApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizLeaderBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizLeaderBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizQuestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizResponses.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizResponses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizSubscribers.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizSubscribers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizQuestionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizQuestionsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizQuestionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizQuestionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -24,6 +41,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cms.quiz.entity" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.CmsUserApplication">
     <configuration name="CmsAdminApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -67,8 +89,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CmsUserApplication" />
         <item itemvalue="Application.CmsAdminApplication" />
+        <item itemvalue="Application.CmsUserApplication" />
         <item itemvalue="Application.CmsQuizApplication" />
       </list>
     </recent_temporary>
@@ -96,19 +118,19 @@
       <option name="project" value="LOCAL" />
       <updated>1611492112752</updated>
     </task>
-    <task id="LOCAL-00003" summary="--cms --added custom queries for subscribed quiz and ongoing quiz">
-      <created>1611553371272</created>
+    <task id="LOCAL-00003" summary="--cms --GeneratedId --changed --to --Identity">
+      <created>1611494519564</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1611553371272</updated>
+      <updated>1611494519564</updated>
     </task>
-    <task id="LOCAL-00004" summary="--cms --added custom queries for subscribed quiz and ongoing quiz">
-      <created>1611553486052</created>
+    <task id="LOCAL-00004" summary="--cms workspace.xml changed">
+      <created>1611494756714</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1611553486052</updated>
+      <updated>1611494756714</updated>
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
@@ -116,7 +138,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="--cms  added new apis --stable" />
     <MESSAGE value="--cms  added new fetch-by-category-id-and-type" />
-    <MESSAGE value="--cms --added custom queries for subscribed quiz and ongoing quiz" />
-    <option name="LAST_COMMIT_MESSAGE" value="--cms --added custom queries for subscribed quiz and ongoing quiz" />
+    <MESSAGE value="--cms --GeneratedId --changed --to --Identity" />
+    <MESSAGE value="--cms workspace.xml changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="--cms workspace.xml changed" />
   </component>
 </project>

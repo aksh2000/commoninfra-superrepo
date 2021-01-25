@@ -14,13 +14,14 @@ public class NonScreenedQuestions {
     private Long questionId;
     private String content;
     private String url;
-    private int level;
+    private int level = 0;
     private int type;
     private Long categoryId;
     private String optionA;
     private String optionB;
     private String optionC;
+    private String optionD;
     private String rightAnswer;
-    private int noOfCorrectAttempt;
-    private int maxTime;
+    private int noOfCorrectAttempt = 0;
+    private int maxTime = 2;
 }

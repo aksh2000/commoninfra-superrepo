@@ -1,5 +1,6 @@
 package com.cms.quiz.controller;
 
+import com.cms.quiz.dto.QuestionDetails;
 import com.cms.quiz.entity.*;
 import com.cms.quiz.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import javax.ws.rs.Path;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -79,6 +83,10 @@ public class QuizController {
     List<QuizQuestions> getQuizQuestions(@PathVariable Long quizId){
         return iQuizQuestionsService.getQuizQuestions(quizId);
     }
+    @GetMapping(value = "/getQuizQuestionsWithContent/{quizId}")
+    List<QuestionDetails> getQuizQuestionsWithContent(@PathVariable("quizId") Long quizId){
+        return iQuizQuestionsService.getQuizQuestionsWithContent(quizId);
+    }
 
     @PostMapping(value = "/addQuizSubscriber")
     QuizSubscribers addQuizSubscriber(@RequestBody QuizSubscribers quizSubscribers){
@@ -116,4 +124,46 @@ public class QuizController {
         return iQuizService.getDynamicQuiz();
     }
 
+
+    @GetMapping(value = "/getPreviousQuizByAdminId/{adminId}")
+    public List<Quiz> getPreviousQuiz(@PathVariable("adminId") String adminId) {
+        List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
+        List<Quiz> quizList1 = new ArrayList<>();
+        LocalDateTime date = LocalDateTime.now();
+        for(Quiz quiz : quizList) {
+            if(date.compareTo(quiz.getEndTime())>0) {
+                quizList1.add(quiz);
+            }
+        }
+        return quizList1;
+    }
+
+    @GetMapping(value = "/getCurrentQuizByAdminId/{adminId}")
+    public List<Quiz> getCurrentQuiz(@PathVariable("adminId") String adminId) {
+        List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
+        List<Quiz> quizList1 = new ArrayList<>();
+        LocalDateTime date = LocalDateTime.now();
+        for(Quiz quiz : quizList) {
+            if(date.compareTo(quiz.getEndTime())<0 && date.compareTo(quiz.getStartTime())>0) {
+                quizList1.add(quiz);
+            }
+        }
+        return quizList1;
+    }
+
+    @GetMapping(value = "/getFutureQuizByAdminId/{adminId}")
+    public List<Quiz> getFutureQuiz(@PathVariable("adminId") String adminId) {
+        List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
+        List<Quiz> quizList1 = new ArrayList<>();
+        LocalDateTime date = LocalDateTime.now();
+        System.out.println(date);
+        System.out.println("*************************");
+        for(Quiz quiz : quizList) {
+            System.out.println(quiz.getStartTime());
+            if(date.compareTo(quiz.getStartTime())<0) {
+                quizList1.add(quiz);
+            }
+        }
+        return quizList1;
+    }
 }
