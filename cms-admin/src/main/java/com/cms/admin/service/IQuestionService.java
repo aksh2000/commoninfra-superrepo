@@ -16,4 +16,8 @@ public interface IQuestionService {
     List<Questions> getQuestionsByCategory(long categoryId);
 
     List<Questions> getQuestionsByCategoryAndType(long categoryId, int type);
+
+    List<Questions> findByType(int type);
+
+    List<Questions> getAllQuestions();
 }

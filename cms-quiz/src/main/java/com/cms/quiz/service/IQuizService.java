@@ -1,5 +1,6 @@
 package com.cms.quiz.service;
 
+import com.cms.quiz.dto.LeaderBoardList;
 import com.cms.quiz.entity.Quiz;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface IQuizService {
     List<Quiz> getStaticQuiz();
 //
     List<Quiz> getDynamicQuiz();
+
+    List<LeaderBoardList> getLeaderBoard(Long quizId);
 }

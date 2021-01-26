@@ -67,4 +67,14 @@ public class AdminController {
         return nsc;
     }
 
+    @GetMapping(value = "/getQuestionsByType/{type}")
+    public List<Questions> findByType(@PathVariable("type") int type){
+        return iQuestionService.findByType(type);
+    }
+
+    @GetMapping(value = "/getAllQuestions")
+    List<Questions> getAllQuestions(){
+        return iQuestionService.getAllQuestions();
+    }
+
 }

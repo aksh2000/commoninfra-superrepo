@@ -10,5 +10,7 @@ public interface IQuizSubscriberService {
 
     List<QuizSubscribers> getQuizSubscribers(Long quizId);
 
-    List<Quiz> getSubscribedQuizs(String userId);
+    List<Quiz> getSubscribedQuizzes(String userId);
+
+    QuizSubscribers getUserSubscriptionStatus(Long quizId, String userId);
 }

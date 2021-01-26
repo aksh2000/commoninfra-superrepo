@@ -16,5 +16,5 @@ public class QuizResponses {
     private Long questionId;
     private String answer;
     private double responseTime;
-    private double questionScore;
+    private double questionScore = 0;
 }
