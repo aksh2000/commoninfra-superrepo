@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -36,4 +37,16 @@ public class QuizSubscriberImpl implements IQuizSubscriberService {
     }
 
 
+
+    @Override
+    public int updateStartTime(String userId, Long quizId) {
+        Date d = new Date();
+        return quizSubscribersRepository.upDateStartTime(d,userId,quizId);
+    }
+
+    @Override
+    public int updateEndTime(String userId, Long quizId) {
+        Date currentDate = new Date();
+        return quizSubscribersRepository.upDateEndTime(currentDate,userId,quizId);
+    }
 }
