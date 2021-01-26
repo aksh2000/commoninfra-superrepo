@@ -1,5 +1,6 @@
 package com.cms.quiz.service.implementation;
 
+import com.cms.quiz.dto.User;
 import com.cms.quiz.entity.Quiz;
 import com.cms.quiz.entity.QuizSubscribers;
 import com.cms.quiz.repository.QuizSubscribersRepository;
@@ -26,9 +27,16 @@ public class QuizSubscriberImpl implements IQuizSubscriberService {
     }
 
     @Override
-    public List<Quiz> getSubscribedQuizs(String userId) {
+    public List<Quiz> getSubscribedQuizzes(String userId) {
         return quizSubscribersRepository.findByUserId(userId);
     }
+
+    @Override
+    public QuizSubscribers getUserSubscriptionStatus(Long quizId, String userId) {
+        return quizSubscribersRepository.findByQuizIdAndUserId(quizId,userId);
+    }
+
+
 
     @Override
     public int updateStartTime(String userId, Long quizId) {

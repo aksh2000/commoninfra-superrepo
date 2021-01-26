@@ -2,12 +2,17 @@ package com.cms.quiz.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="skipCount")
+@Table(name = "skipCount")
 public class SkipCount {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long quizId;
+    private String userId;
+    private int skipCount;
+
 
 }

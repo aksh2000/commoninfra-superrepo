@@ -19,6 +19,7 @@ public class QuizQuestionImpl implements IQuizQuestionsService {
 
     @Autowired
     RestTemplate restTemplate;
+
     @Override
     public QuizQuestions addQuizQuestion(QuizQuestions quizQuestions) {
         try {

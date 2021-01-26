@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+//@CrossOrigin(origins = "*")
 @CrossOrigin
 @RestController
 @RequestMapping(value = "/cmsAdmin")
@@ -64,6 +65,16 @@ public class AdminController {
         NonScreenedQuestions nsc= nonScreenedQuestionsService.findFirstElement().get();
         nonScreenedQuestionsService.deleteById(nsc.getQuestionId());
         return nsc;
+    }
+
+    @GetMapping(value = "/getQuestionsByType/{type}")
+    public List<Questions> findByType(@PathVariable("type") int type){
+        return iQuestionService.findByType(type);
+    }
+
+    @GetMapping(value = "/getAllQuestions")
+    List<Questions> getAllQuestions(){
+        return iQuestionService.getAllQuestions();
     }
 
 }

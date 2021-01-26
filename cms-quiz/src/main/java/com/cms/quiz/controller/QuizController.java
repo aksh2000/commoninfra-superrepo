@@ -1,13 +1,16 @@
 package com.cms.quiz.controller;
 
+import com.cms.quiz.dto.BroadcastQuestion;
+import com.cms.quiz.dto.LeaderBoardList;
 import com.cms.quiz.dto.QuestionDetails;
 import com.cms.quiz.entity.*;
+import com.cms.quiz.methods.Methods;
 import com.cms.quiz.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import javax.transaction.Transactional;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -33,24 +36,30 @@ public class QuizController {
     @Autowired
     IQuizSubscriberService iQuizSubscriberService;
 
+    @Autowired
+    ISkipCountService iSkipCountService;
+
+    @Autowired
+    IQuizLeaderBoard iQuizLeaderBoard;
+
+    @Autowired
+    RestTemplate restTemplate;
+
     @GetMapping(value = "/getQuizDetails/{quizId}")
     public Optional<Quiz> findById(@PathVariable("quizId") Long quizId){
         return iQuizService.findById(quizId);
     }
 
-    @PostMapping(value = "/addQuizResponse")
-    public QuizResponses addQuizResponse(@RequestBody QuizResponses quizResponses){
-        return iQuizResponse.addQuizResponse(quizResponses);
-    }
+
 
     @GetMapping(value = "/getUserResponsesByUserIdAndQuizId/{userId}/{quizId}")
     List<QuizResponses> findByUserIdAndQuizId(@PathVariable("userId") String userId, @PathVariable("quizId") Long quizId){
         return iQuizResponse.findByUserIdAndQuizId(userId, quizId);
     }
 
-    @GetMapping(value = "/getSubscribedQuizs/{userId}")
-    List<Quiz> getSubscribedQuizs(@PathVariable("userId") String userId){
-        return iQuizSubscriberService.getSubscribedQuizs(userId);
+    @GetMapping(value = "/getSubscribedQuizzes/{userId}")
+    List<Quiz> getSubscribedQuizzes(@PathVariable("userId") String userId){
+        return iQuizSubscriberService.getSubscribedQuizzes(userId);
     }
 
     @PostMapping(value = "/addQuiz")
@@ -58,10 +67,7 @@ public class QuizController {
         return iQuizService.addQuiz(quiz);
     }
 
-//    @GetMapping(value = "/getQuizDetails/{quizId}")
-//    Optional<Quiz> getQuizDetails(@PathVariable("quizId") Long quizId){
-//        return iQuizService.getQuizDetails(quizId);
-//    }
+
 
     @PostMapping(value = "/addCategory")
     Category addCategory(@RequestBody Category category){
@@ -89,6 +95,11 @@ public class QuizController {
 
     @PostMapping(value = "/addQuizSubscriber")
     QuizSubscribers addQuizSubscriber(@RequestBody QuizSubscribers quizSubscribers){
+        QuizLeaderBoard quizLeaderBoard = new QuizLeaderBoard();
+        quizLeaderBoard.setQuizId(quizSubscribers.getQuizId());
+        quizLeaderBoard.setUserId(quizSubscribers.getUserId());
+        quizLeaderBoard.setTotalScore(0);
+        iQuizLeaderBoard.addLeaderBoard(quizLeaderBoard);
         return iQuizSubscriberService.addQuizSubscriber(quizSubscribers);
     }
 
@@ -164,6 +175,54 @@ public class QuizController {
         }
         return quizList1;
     }
+
+    @PostMapping(value = "/broadcastQuestion")
+    public BroadcastQuestion broadcastQuestion(@RequestBody BroadcastQuestion broadcastQuestion){
+        return broadcastQuestion;
+    }
+
+    @GetMapping(value = "/getLeaderBoard/{quizId}")
+    public List<LeaderBoardList> getLeaderBoard(@PathVariable("quizId") Long quizId){
+        return iQuizService.getLeaderBoard(quizId);
+    }
+    @GetMapping(value = "/getUserSubscriptionStatus/{quizId}/{userId}")
+    public QuizSubscribers getUserSubscriptionStatus(@PathVariable("quizId") Long quizId,@PathVariable("userId")String userId){
+        return iQuizSubscriberService.getUserSubscriptionStatus(quizId,userId);
+    }
+
+    @PostMapping(value = "/skipInitialize")
+    public void save(@RequestBody SkipCount skipCount) {
+        skipCount.setSkipCount(0);
+        iSkipCountService.save(skipCount);
+    }
+
+    @GetMapping(value = "/getSkipCount/{quizId}/{userId}")
+    public SkipCount getCount(@PathVariable("quizId")long quizId, @PathVariable("userId")String userId) {
+        SkipCount skipCount = iSkipCountService.findByQuizIdAndUserId(quizId,userId);
+        int count = skipCount.getSkipCount();
+        if(count >= 3) {
+            return skipCount;
+        }
+        else {
+            skipCount.setSkipCount(count+1);
+            return iSkipCountService.save(skipCount);
+        }
+    }
+
+    @PostMapping("/addQuizResponse")
+    public QuizResponses addResponse(@RequestBody QuizResponses quizResponses){
+        System.out.println("Question id = "+quizResponses.getQuestionId());
+        QuestionDetails questionDetails = restTemplate.getForObject("http://CMS-ADMIN/cmsAdmin/getQuestionDetails/"+quizResponses.getQuestionId(),QuestionDetails.class);
+
+        assert questionDetails != null;
+        double score = Methods.getScore(quizResponses,questionDetails);
+        quizResponses.setQuestionScore(score);
+        int modified = iQuizLeaderBoard.updateLeaderBoard(quizResponses.getQuizId(), quizResponses.getUserId(), score);
+        return  iQuizResponse.addQuizResponse(quizResponses);
+    }
+
+
+
 
     @GetMapping(value = "cmsQuiz/canStart/{quizId}")
     public boolean canStart(@PathVariable("quizId") Long quizId){
