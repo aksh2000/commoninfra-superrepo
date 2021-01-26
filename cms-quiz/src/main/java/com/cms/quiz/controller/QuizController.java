@@ -99,7 +99,8 @@ public class QuizController {
         quizLeaderBoard.setQuizId(quizSubscribers.getQuizId());
         quizLeaderBoard.setUserId(quizSubscribers.getUserId());
         quizLeaderBoard.setTotalScore(0);
-        iQuizLeaderBoard.addLeaderBoard(quizLeaderBoard);
+       QuizLeaderBoard quizLeaderBoard1 =  iQuizLeaderBoard.addLeaderBoard(quizLeaderBoard);
+        System.out.println(quizLeaderBoard1);
         return iQuizSubscriberService.addQuizSubscriber(quizSubscribers);
     }
 
@@ -191,20 +192,20 @@ public class QuizController {
     }
 
     @PostMapping(value = "/skipInitialize")
-    public void save(@RequestBody SkipCount skipCount) {
-        skipCount.setSkipCount(0);
-        iSkipCountService.save(skipCount);
+    public SkipCount save(@RequestBody SkipCount skipCount) {
+        //skipCount.setSkipCount(0);
+        return iSkipCountService.save(skipCount);
     }
 
     @GetMapping(value = "/getSkipCount/{quizId}/{userId}")
     public SkipCount getCount(@PathVariable("quizId")long quizId, @PathVariable("userId")String userId) {
         SkipCount skipCount = iSkipCountService.findByQuizIdAndUserId(quizId,userId);
-        int count = skipCount.getSkipCount();
+        int count = skipCount.getCount();
         if(count >= 3) {
             return skipCount;
         }
         else {
-            skipCount.setSkipCount(count+1);
+            skipCount.setCount(count+1);
             return iSkipCountService.save(skipCount);
         }
     }
@@ -245,5 +246,15 @@ public class QuizController {
     @GetMapping(value = "/getSolvedQuestions/{quizId}/{userId}")
     public List<QuizResponses> getSolvedQuestions(@PathVariable("userId") String userId,@PathVariable("quizId") Long quizId){
         return iQuizResponse.findByUserIdAndQuizId(userId,quizId);
+    }
+
+    @GetMapping(value = "/getRemainingTime/{quizId}/{userId}")
+    public long getRemainingTime(@PathVariable("quizId") Long quizId,@PathVariable("userId") String userId){
+        QuizSubscribers quizSubscribers = iQuizSubscriberService.findByQuizIdAndUserId(quizId,userId);
+        Date startTime = quizSubscribers.getUserStartTime();
+        Date date = new Date();
+        long differenceInSeconds = (date.getTime() - startTime.getTime()) / 1000;
+        //System.out.println(differenceInSeconds);
+        return differenceInSeconds;
     }
 }

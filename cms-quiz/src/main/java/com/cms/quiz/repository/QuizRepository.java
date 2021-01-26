@@ -14,6 +14,7 @@ import java.util.Optional;
 @Repository
 public interface QuizRepository extends JpaRepository<Quiz,Long> {
     List<Quiz> findByAdminId(String adminId);
+
     @Query(value = "select * from quiz where type = ?2 and end_time > ?1",nativeQuery = true )
     List<Quiz> getStaticQuiz(Date d ,int type);
 

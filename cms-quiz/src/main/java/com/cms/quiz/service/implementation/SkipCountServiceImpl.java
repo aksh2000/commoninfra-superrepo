@@ -15,8 +15,7 @@ public class SkipCountServiceImpl implements ISkipCountService {
 
     @Override
     public SkipCount save(SkipCount skipCount) {
-        skipCountRepository.save(skipCount);
-        return skipCount;
+        return skipCountRepository.save(skipCount);
     }
 
     @Override

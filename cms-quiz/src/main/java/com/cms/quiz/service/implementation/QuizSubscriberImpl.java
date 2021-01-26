@@ -49,4 +49,11 @@ public class QuizSubscriberImpl implements IQuizSubscriberService {
         Date currentDate = new Date();
         return quizSubscribersRepository.upDateEndTime(currentDate,userId,quizId);
     }
+
+    @Override
+    public QuizSubscribers findByQuizIdAndUserId(Long quizId, String userId) {
+        return quizSubscribersRepository.findByQuizIdAndUserId(quizId,userId);
+    }
+
+
 }

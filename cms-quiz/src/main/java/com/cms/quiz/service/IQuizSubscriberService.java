@@ -3,6 +3,7 @@ package com.cms.quiz.service;
 import com.cms.quiz.entity.Quiz;
 import com.cms.quiz.entity.QuizSubscribers;
 
+import java.util.Date;
 import java.util.List;
 
 public interface IQuizSubscriberService {
@@ -16,4 +17,6 @@ public interface IQuizSubscriberService {
     int updateStartTime(String userId, Long quizId);
 
     int updateEndTime(String userId, Long quizId);
+
+    QuizSubscribers findByQuizIdAndUserId(Long quizId, String userId);
 }

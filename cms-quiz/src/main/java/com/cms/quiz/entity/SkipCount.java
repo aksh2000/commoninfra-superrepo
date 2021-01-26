@@ -9,10 +9,9 @@ import javax.persistence.*;
 @Table(name = "skipCount")
 public class SkipCount {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long skipCountId;
     private long quizId;
     private String userId;
-    private int skipCount;
-
-
+    private int count;
 }

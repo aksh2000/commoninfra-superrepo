@@ -22,11 +22,11 @@ public interface QuizSubscribersRepository extends JpaRepository<QuizSubscribers
 
     @Transactional
     @Modifying
-    @Query(value = "update subscribers  set start_time = ?1 where user_id = ?2 and quiz_id = ?3",nativeQuery = true)
+    @Query(value = "update subscribers  set user_start_time = ?1 ,status = 1 where user_id = ?2 and quiz_id = ?3",nativeQuery = true)
     int upDateStartTime(Date d, String userId, Long quizId);
 
     @Transactional
     @Modifying
-    @Query(value = "update subscribers  set end_time = ?1 where user_id = ?2 and quiz_id = ?3",nativeQuery = true)
+    @Query(value = "update subscribers  set user_end_time = ?1,status = 2 where user_id = ?2 and quiz_id = ?3",nativeQuery = true)
     int upDateEndTime(Date d,String userId, Long quizId);
 }
