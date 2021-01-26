@@ -241,4 +241,9 @@ public class QuizController {
     public int quizEnded(@PathVariable("userId") String userId,@PathVariable("quizId") Long quizId){
         return iQuizSubscriberService.updateEndTime(userId,quizId);
     }
+
+    @GetMapping(value = "/getSolvedQuestions/{quizId}/{userId}")
+    public List<QuizResponses> getSolvedQuestions(@PathVariable("userId") String userId,@PathVariable("quizId") Long quizId){
+        return iQuizResponse.findByUserIdAndQuizId(userId,quizId);
+    }
 }
