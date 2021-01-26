@@ -224,7 +224,7 @@ public class QuizController {
 
 
 
-    @GetMapping(value = "cmsQuiz/canStart/{quizId}")
+    @GetMapping(value = "/canStart/{quizId}")
     public boolean canStart(@PathVariable("quizId") Long quizId){
         Quiz quiz = iQuizService.findById(quizId).get();
         Date d = new Date();
@@ -232,12 +232,12 @@ public class QuizController {
         return quizDate.compareTo(d) < 0;
     }
 
-    @GetMapping(value = "/cmsQuiz/quizStarted/{userId}/{quizId}")
+    @GetMapping(value = "/quizStarted/{userId}/{quizId}")
     public int quizStarted(@PathVariable("userId") String userId,@PathVariable("quizId") Long quizId){
         return iQuizSubscriberService.updateStartTime(userId,quizId);
     }
 
-    @GetMapping(value = "/cmsQuiz/quizEnded/{userId}/{quizId}")
+    @GetMapping(value = "/quizEnded/{userId}/{quizId}")
     public int quizEnded(@PathVariable("userId") String userId,@PathVariable("quizId") Long quizId){
         return iQuizSubscriberService.updateEndTime(userId,quizId);
     }
