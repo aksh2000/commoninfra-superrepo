@@ -229,10 +229,7 @@ public class QuizController {
         Quiz quiz = iQuizService.findById(quizId).get();
         Date d = new Date();
         Date quizDate = quiz.getStartTime();
-        if(quizDate.compareTo(d) < 0 ){
-            return true;
-        }
-        else return false;
+        return quizDate.compareTo(d) < 0;
     }
 
     @GetMapping(value = "/cmsQuiz/quizStarted/{userId}/{quizId}")

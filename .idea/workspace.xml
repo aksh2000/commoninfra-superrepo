@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ab4801c-17bf-4881-b514-01dc8379eaa7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/SkipCountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
