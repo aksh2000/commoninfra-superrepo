@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ab4801c-17bf-4881-b514-01dc8379eaa7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" afterDir="false" />
-    </list>
+    <list default="true" id="6ab4801c-17bf-4881-b514-01dc8379eaa7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611648182209</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="--cms changed modified few apis">
+      <created>1611651303321</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1611651303321</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -173,6 +177,7 @@
     <MESSAGE value="--cms deleted some extra lines added for testing of date" />
     <MESSAGE value="--cms changed localdatetime to date" />
     <MESSAGE value="--cms changed leaderboardapi" />
-    <option name="LAST_COMMIT_MESSAGE" value="--cms changed leaderboardapi" />
+    <MESSAGE value="--cms changed modified few apis" />
+    <option name="LAST_COMMIT_MESSAGE" value="--cms changed modified few apis" />
   </component>
 </project>
