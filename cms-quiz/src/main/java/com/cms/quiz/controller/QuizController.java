@@ -241,6 +241,4 @@ public class QuizController {
     public int quizEnded(@PathVariable("userId") String userId,@PathVariable("quizId") Long quizId){
         return iQuizSubscriberService.updateEndTime(userId,quizId);
     }
-
-
 }
