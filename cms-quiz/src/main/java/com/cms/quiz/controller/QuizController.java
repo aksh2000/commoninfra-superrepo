@@ -128,7 +128,7 @@ public class QuizController {
     public List<Quiz> getPreviousQuiz(@PathVariable("adminId") String adminId) {
         List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
         List<Quiz> quizList1 = new ArrayList<>();
-        LocalDateTime date = LocalDateTime.now();
+        Date date = new Date();
         for(Quiz quiz : quizList) {
             if(date.compareTo(quiz.getEndTime())>0) {
                 quizList1.add(quiz);
@@ -141,7 +141,7 @@ public class QuizController {
     public List<Quiz> getCurrentQuiz(@PathVariable("adminId") String adminId) {
         List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
         List<Quiz> quizList1 = new ArrayList<>();
-        LocalDateTime date = LocalDateTime.now();
+        Date date = new Date();
         for(Quiz quiz : quizList) {
             if(date.compareTo(quiz.getEndTime())<0 && date.compareTo(quiz.getStartTime())>0) {
                 quizList1.add(quiz);
@@ -154,7 +154,7 @@ public class QuizController {
     public List<Quiz> getFutureQuiz(@PathVariable("adminId") String adminId) {
         List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
         List<Quiz> quizList1 = new ArrayList<>();
-        LocalDateTime date = LocalDateTime.now();
+        Date date = new Date();
 
         for(Quiz quiz : quizList) {
             System.out.println(quiz.getStartTime());
@@ -164,5 +164,27 @@ public class QuizController {
         }
         return quizList1;
     }
+
+    @GetMapping(value = "cmsQuiz/canStart/{quizId}")
+    public boolean canStart(@PathVariable("quizId") Long quizId){
+        Quiz quiz = iQuizService.findById(quizId).get();
+        Date d = new Date();
+        Date quizDate = quiz.getStartTime();
+        if(quizDate.compareTo(d) < 0 ){
+            return true;
+        }
+        else return false;
+    }
+
+    @GetMapping(value = "/cmsQuiz/quizStarted/{userId}/{quizId}")
+    public int quizStarted(@PathVariable("userId") String userId,@PathVariable("quizId") Long quizId){
+        return iQuizSubscriberService.updateStartTime(userId,quizId);
+    }
+
+    @GetMapping(value = "/cmsQuiz/quizEnded/{userId}/{quizId}")
+    public int quizEnded(@PathVariable("userId") String userId,@PathVariable("quizId") Long quizId){
+        return iQuizSubscriberService.updateEndTime(userId,quizId);
+    }
+
 
 }

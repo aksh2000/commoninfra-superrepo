@@ -11,4 +11,8 @@ public interface IQuizSubscriberService {
     List<QuizSubscribers> getQuizSubscribers(Long quizId);
 
     List<Quiz> getSubscribedQuizs(String userId);
+
+    int updateStartTime(String userId, Long quizId);
+
+    int updateEndTime(String userId, Long quizId);
 }
