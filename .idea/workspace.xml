@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ab4801c-17bf-4881-b514-01dc8379eaa7" name="Default Changelist" comment="">
+    <list default="true" id="6ab4801c-17bf-4881-b514-01dc8379eaa7" name="Default Changelist" comment="--cms after solving merge conflicts">
+      <change afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/SkipCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizSubscribers.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/QuizSubscribers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611494756714</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="--cms after solving merge conflicts">
+      <created>1611564590924</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611564590924</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -129,6 +139,7 @@
     <MESSAGE value="--cms  added new fetch-by-category-id-and-type" />
     <MESSAGE value="--cms --GeneratedId --changed --to --Identity" />
     <MESSAGE value="--cms workspace.xml changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="--cms workspace.xml changed" />
+    <MESSAGE value="--cms after solving merge conflicts" />
+    <option name="LAST_COMMIT_MESSAGE" value="--cms after solving merge conflicts" />
   </component>
 </project>

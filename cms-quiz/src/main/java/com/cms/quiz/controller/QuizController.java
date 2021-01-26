@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
-import javax.ws.rs.Path;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
@@ -59,10 +58,10 @@ public class QuizController {
         return iQuizService.addQuiz(quiz);
     }
 
-    @GetMapping(value = "/getQuizDetails/{quizId}")
-    Optional<Quiz> getQuizDetails(@PathVariable("quizId") Long quizId){
-        return iQuizService.getQuizDetails(quizId);
-    }
+//    @GetMapping(value = "/getQuizDetails/{quizId}")
+//    Optional<Quiz> getQuizDetails(@PathVariable("quizId") Long quizId){
+//        return iQuizService.getQuizDetails(quizId);
+//    }
 
     @PostMapping(value = "/addCategory")
     Category addCategory(@RequestBody Category category){
@@ -93,7 +92,7 @@ public class QuizController {
         return iQuizSubscriberService.addQuizSubscriber(quizSubscribers);
     }
 
-    @GetMapping(value = "getQuizSubscribers/{quizId}")
+    @GetMapping(value = "/getQuizSubscribers/{quizId}")
     List<QuizSubscribers> getQuizSubscribers(@PathVariable("quizId") Long quizId ){
         return iQuizSubscriberService.getQuizSubscribers(quizId);
     }
@@ -104,7 +103,7 @@ public class QuizController {
         return iQuizQuestionsService.deleteQuestion(quizId,questionId);
     }
 
-    @GetMapping(value = "getQuizListByAdminId/{adminId}")
+    @GetMapping(value = "/getQuizListByAdminId/{adminId}")
     List<Quiz> getQuizListByAdminId(@PathVariable("adminId") String adminId){
         return iQuizService.getQuizListByAdminId(adminId);
     }
@@ -165,4 +164,5 @@ public class QuizController {
         }
         return quizList1;
     }
+
 }
