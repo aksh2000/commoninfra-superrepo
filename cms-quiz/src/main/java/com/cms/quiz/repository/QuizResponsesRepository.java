@@ -10,4 +10,7 @@ import java.util.List;
 @Repository
 public interface QuizResponsesRepository extends JpaRepository<QuizResponses,Long> {
     List<QuizResponses> findByUserIdAndQuizId(String userId, Long quizId);
+
+    @Query(value = "select distinct(question_id) from quiz_responses where quiz_id = ?1", nativeQuery = true)
+    List<Long> getBroadcastedDynamicQuizQuestions(Long quizId);
 }

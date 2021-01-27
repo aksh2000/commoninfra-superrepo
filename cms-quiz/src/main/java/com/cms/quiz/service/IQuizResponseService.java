@@ -11,4 +11,5 @@ public interface IQuizResponseService {
     List<QuizResponses> findByUserIdAndQuizId(String userId, Long quizId);
 
 
+    List<Long> getBroadcastedDynamicQuizQuestions(Long quizId);
 }

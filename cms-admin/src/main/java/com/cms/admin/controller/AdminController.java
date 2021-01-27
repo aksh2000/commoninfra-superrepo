@@ -1,8 +1,10 @@
 package com.cms.admin.controller;
 
 import com.cms.admin.entity.Admin;
+import com.cms.admin.entity.CacheQuestion;
 import com.cms.admin.entity.NonScreenedQuestions;
 import com.cms.admin.entity.Questions;
+import com.cms.admin.repository.CacheRepository;
 import com.cms.admin.service.IAdminService;
 import com.cms.admin.service.IQuestionService;
 import com.cms.admin.service.implementation.NonScreenedQuestionsServiceImpl;
@@ -18,6 +20,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping(value = "/cmsAdmin")
 public class AdminController {
+
+    @Autowired
+    CacheRepository cacheRepository;
 
     @Autowired
     IAdminService iAdminService;
@@ -75,6 +80,21 @@ public class AdminController {
     @GetMapping(value = "/getAllQuestions")
     List<Questions> getAllQuestions(){
         return iQuestionService.getAllQuestions();
+    }
+
+    @CrossOrigin
+    @PostMapping(value="/updateCacheQuestion")
+    public void UpdateCacheQuestion(@RequestBody CacheQuestion cacheQuestion){
+        cacheRepository.save(cacheQuestion);
+    }
+    @GetMapping(value="/getCacheQuestion/{quizId}")
+    public CacheQuestion getCachedQuestion(@PathVariable("quizId")long quizId){
+        return cacheRepository.findById(quizId).get();
+    }
+
+    @GetMapping(value = "/getCountOfNonScreenedQuestions")
+    public Long getCountOfNonScreenedQuestions(){
+        return nonScreenedQuestionsService.getCountOfNonScreenedQuestions();
     }
 
 }

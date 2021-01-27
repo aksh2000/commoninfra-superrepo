@@ -11,4 +11,5 @@ public interface INonScreenedQuestionsService {
     Optional<NonScreenedQuestions> findFirstElement();
 
     void deleteById(Long questionId);
+    public Long getCountOfNonScreenedQuestions() ;
 }

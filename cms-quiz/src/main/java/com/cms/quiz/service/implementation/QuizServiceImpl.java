@@ -4,7 +4,9 @@ import com.cms.quiz.dto.LeaderBoardList;
 import com.cms.quiz.dto.User;
 import com.cms.quiz.entity.Quiz;
 import com.cms.quiz.entity.QuizLeaderBoard;
+import com.cms.quiz.methods.Methods;
 import com.cms.quiz.repository.QuizLeaderBoardRepository;
+import com.cms.quiz.repository.QuizQuestionsRepository;
 import com.cms.quiz.repository.QuizRepository;
 import com.cms.quiz.service.IQuizService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,8 @@ public class QuizServiceImpl implements IQuizService {
     @Autowired
     QuizLeaderBoardRepository quizLeaderBoardRepository;
 
+    @Autowired
+    QuizQuestionsRepository quizQuestionsRepository;
     @Override
     public Quiz addQuiz(Quiz quiz) {
         return quizRepository.save(quiz);
@@ -52,13 +56,16 @@ public class QuizServiceImpl implements IQuizService {
     @Override
     public List<Quiz> getStaticQuiz() {
         Date date = new Date();
-        return quizRepository.getStaticQuiz(date,0);
+        List<Quiz> quizList = quizRepository.getStaticQuiz(date,0);
+        return Methods.getValidQuizzes(quizList,quizQuestionsRepository);
     }
 
     @Override
     public List<Quiz> getDynamicQuiz() {
         Date date = new Date();
-        return quizRepository.getDynamicQuiz(date,1);
+        List<Quiz> quizList = quizRepository.getDynamicQuiz(date,1);
+        System.out.println("Inside Dynamic  :" + quizList.size());
+        return Methods.getValidQuizzes(quizList,quizQuestionsRepository);
     }
 
     @Override

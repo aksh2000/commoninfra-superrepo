@@ -20,4 +20,8 @@ public class NonScreenedQuestionsServiceImpl implements INonScreenedQuestionsSer
     public void deleteById(Long questionId){
          nonScreenedQuestionsRepository.deleteById(questionId);
     }
+
+    public Long getCountOfNonScreenedQuestions() {
+        return nonScreenedQuestionsRepository.count();
+    }
 }

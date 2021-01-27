@@ -230,7 +230,7 @@ public class QuizController {
         Quiz quiz = iQuizService.findById(quizId).get();
         Date d = new Date();
         Date quizDate = quiz.getStartTime();
-        return quizDate.compareTo(d) < 0;
+        return quizDate.compareTo(d) < 0 ? true : false;
     }
 
     @GetMapping(value = "/quizStarted/{userId}/{quizId}")
@@ -256,5 +256,15 @@ public class QuizController {
         long differenceInSeconds = (date.getTime() - startTime.getTime()) / 1000;
         //System.out.println(differenceInSeconds);
         return differenceInSeconds;
+    }
+
+    @GetMapping("/countQuizQuestions/{quizId}")
+    Long countQuizQuestions(@PathVariable("quizId") Long quizId){
+        return iQuizQuestionsService.countQuizQuestions(quizId);
+    }
+
+    @GetMapping("/getBroadcastedDynamicQuizQuestions/{quizId}")
+    List<Long> getBroadcastedDynamicQuizQuestions(@PathVariable("quizId") Long quizId){
+        return iQuizResponse.getBroadcastedDynamicQuizQuestions(quizId);
     }
 }

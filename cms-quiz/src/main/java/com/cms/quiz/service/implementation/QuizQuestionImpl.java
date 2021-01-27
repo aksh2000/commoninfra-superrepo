@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,5 +52,10 @@ public class QuizQuestionImpl implements IQuizQuestionsService {
         }
         return questionDetails;
 
+    }
+
+    @Override
+    public Long countQuizQuestions(Long quizId) {
+        return quizQuestionsRepository.countQuestions(quizId);
     }
 }

@@ -13,4 +13,6 @@ public interface IQuizQuestionsService {
     List<QuizQuestions> deleteQuestion(Long quizId, Long questionId);
 
     List<QuestionDetails> getQuizQuestionsWithContent(Long quizId);
+
+    Long countQuizQuestions(Long quizId);
 }

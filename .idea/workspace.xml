@@ -5,15 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ab4801c-17bf-4881-b514-01dc8379eaa7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_6_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_4_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_4_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/entity/CacheQuestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/repository/CacheRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/entity/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/INonScreenedQuestionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/INonScreenedQuestionsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/implementation/NonScreenedQuestionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/service/implementation/NonScreenedQuestionsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/SkipCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/entity/SkipCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/methods/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/methods/Methods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizQuestionsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizQuestionsRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizSubscribersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizSubscribersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizSubscriberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizSubscriberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizSubscriberImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizSubscriberImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/SkipCountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/SkipCountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizResponsesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizResponsesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizQuestionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizQuestionsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizResponseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizQuestionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizQuestionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizResponsesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizResponsesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -47,6 +60,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -98,8 +112,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.CmsQuizApplication" />
-        <item itemvalue="Application.CmsUserApplication" />
         <item itemvalue="Application.CmsAdminApplication" />
+        <item itemvalue="Application.CmsUserApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611648182209</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="--cms before adding aman's code">
+      <created>1611668073683</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1611668073683</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -180,6 +201,7 @@
     <MESSAGE value="--cms deleted some extra lines added for testing of date" />
     <MESSAGE value="--cms changed localdatetime to date" />
     <MESSAGE value="--cms changed leaderboardapi" />
-    <option name="LAST_COMMIT_MESSAGE" value="--cms changed leaderboardapi" />
+    <MESSAGE value="--cms before adding aman's code" />
+    <option name="LAST_COMMIT_MESSAGE" value="--cms before adding aman's code" />
   </component>
 </project>
