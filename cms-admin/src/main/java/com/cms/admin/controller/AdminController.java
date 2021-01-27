@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 //@CrossOrigin(origins = "*")
-@CrossOrigin
+//@CrossOrigin
 @RestController
 @RequestMapping(value = "/cmsAdmin")
 public class AdminController {

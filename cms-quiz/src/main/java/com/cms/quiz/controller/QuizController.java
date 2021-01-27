@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin
+//@CrossOrigin
 @RestController
 @RequestMapping(value = "/cmsQuiz")
 public class QuizController {
@@ -59,7 +59,13 @@ public class QuizController {
 
     @GetMapping(value = "/getSubscribedQuizzes")
     List<Quiz> getSubscribedQuizzes(@RequestHeader("username") String userId){
-        return iQuizSubscriberService.getSubscribedQuizzes(userId);
+        List<QuizSubscribers> quizSubscribers = iQuizSubscriberService.getSubscribedQuizzes(userId);
+        List<Quiz> quizList = new ArrayList<>();
+        for (QuizSubscribers quizSubscribers1: quizSubscribers) {
+            Optional<Quiz> quiz = iQuizService.findById(quizSubscribers1.getQuizId());
+            quizList.add(quiz.get());
+        }
+        return quizList;
     }
 
     @PostMapping(value = "/addQuiz")

@@ -27,7 +27,7 @@ public class QuizSubscriberImpl implements IQuizSubscriberService {
     }
 
     @Override
-    public List<Quiz> getSubscribedQuizzes(String userId) {
+    public List<QuizSubscribers> getSubscribedQuizzes(String userId) {
         return quizSubscribersRepository.findByUserId(userId);
     }
 
