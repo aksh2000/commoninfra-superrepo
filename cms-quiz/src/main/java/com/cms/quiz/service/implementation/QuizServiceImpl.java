@@ -83,4 +83,10 @@ public class QuizServiceImpl implements IQuizService {
         }
         return leaderBoardLists;
     }
+
+    @Override
+    public Quiz setEndTime(Long quizId) {
+        Date date = new Date();
+        return quizRepository.setEndTime(date,quizId);
+    }
 }

@@ -18,4 +18,6 @@ public interface IQuizService {
     List<Quiz> getDynamicQuiz();
 
     List<LeaderBoardList> getLeaderBoard(Long quizId);
+
+    Quiz setEndTime(Long quizId);
 }

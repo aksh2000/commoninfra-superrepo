@@ -267,4 +267,8 @@ public class QuizController {
     List<Long> getBroadcastedDynamicQuizQuestions(@PathVariable("quizId") Long quizId){
         return iQuizResponse.getBroadcastedDynamicQuizQuestions(quizId);
     }
+    @GetMapping("/setEndTime/{quizId}")
+    Quiz setEndTime(@PathVariable("quizId") Long quizId){
+        return iQuizService.setEndTime(quizId);
+    }
 }
