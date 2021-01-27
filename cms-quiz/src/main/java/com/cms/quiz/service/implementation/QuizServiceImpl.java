@@ -5,6 +5,7 @@ import com.cms.quiz.dto.User;
 import com.cms.quiz.entity.Quiz;
 import com.cms.quiz.entity.QuizLeaderBoard;
 import com.cms.quiz.methods.Methods;
+import com.cms.quiz.pojo.MainLeaderboard;
 import com.cms.quiz.repository.QuizLeaderBoardRepository;
 import com.cms.quiz.repository.QuizQuestionsRepository;
 import com.cms.quiz.repository.QuizRepository;
@@ -24,6 +25,8 @@ public class QuizServiceImpl implements IQuizService {
 
     @Autowired
     QuizRepository quizRepository;
+
+
 
     @Autowired
     RestTemplate restTemplate;
@@ -88,5 +91,20 @@ public class QuizServiceImpl implements IQuizService {
     public Quiz setEndTime(Long quizId) {
         Date date = new Date();
         return quizRepository.setEndTime(date,quizId);
+    }
+
+    @Override
+    public List<LeaderBoardList> getMainLeaderBoard() {
+        List<LeaderBoardList> leaderBoardLists = new ArrayList<>();
+        List<Object[]> mainLeaderboards = quizLeaderBoardRepository.getMainLeaderBoard();
+        for (int i = 0;i<mainLeaderboards.size();i++) {
+            Object[] mainLeaderBoard = mainLeaderboards.get(i);
+            User user = restTemplate.getForObject("http://CMS-USER/cmsUser/getUserDetailsInternal/"+String.valueOf(mainLeaderBoard[0]), User.class);
+            LeaderBoardList leaderBoardList = new LeaderBoardList();
+            leaderBoardList.setUser(user);
+            leaderBoardList.setScore(Double.parseDouble(mainLeaderBoard[1]+""));
+            leaderBoardLists.add(leaderBoardList);
+        }
+        return leaderBoardLists;
     }
 }

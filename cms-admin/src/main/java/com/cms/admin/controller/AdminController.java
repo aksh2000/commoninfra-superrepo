@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-//@CrossOrigin(origins = "*")
-//@CrossOrigin
+
 @RestController
 @RequestMapping(value = "/cmsAdmin")
 public class AdminController {
@@ -84,7 +83,6 @@ public class AdminController {
         return iQuestionService.getAllQuestions();
     }
 
-    @CrossOrigin
     @PostMapping(value="/updateCacheQuestion")
     public void UpdateCacheQuestion(@RequestBody CacheQuestion cacheQuestion){
         cacheRepository.save(cacheQuestion);
@@ -96,6 +94,8 @@ public class AdminController {
 
     @GetMapping(value = "/getCountOfNonScreenedQuestions")
     public Long getCountOfNonScreenedQuestions(){
+//        System.out.println(username);
+//        System.out.println("hello");
         return nonScreenedQuestionsService.getCountOfNonScreenedQuestions();
     }
 

@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-//@CrossOrigin
+
 @RestController
 @RequestMapping(value = "/cmsQuiz")
 public class QuizController {
@@ -280,5 +280,10 @@ public class QuizController {
     @GetMapping("/setEndTime/{quizId}")
     Quiz setEndTime(@PathVariable("quizId") Long quizId){
         return iQuizService.setEndTime(quizId);
+    }
+
+    @GetMapping("/getMainLeaderBoard")
+    List<LeaderBoardList> getMainLeaderBoard(){
+        return iQuizService.getMainLeaderBoard();
     }
 }

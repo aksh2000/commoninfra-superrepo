@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-//@CrossOrigin
+
 @RestController
 @RequestMapping(value = "/cmsUser")
 public class UserController {

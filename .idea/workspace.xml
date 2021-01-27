@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ab4801c-17bf-4881-b514-01dc8379eaa7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/pojo/MainLeaderboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-admin/src/main/java/com/cms/admin/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/controller/QuizController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizLeaderBoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizLeaderBoardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/IQuizService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,8 +103,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.CmsQuizApplication" />
-        <item itemvalue="Application.CmsUserApplication" />
         <item itemvalue="Application.CmsAdminApplication" />
+        <item itemvalue="Application.CmsUserApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611757012269</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="--cms added new branch quiz_with_ci">
+      <created>1611759917918</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1611759917918</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -218,6 +232,7 @@
     <MESSAGE value="--cms commit before integration with common infra team" />
     <MESSAGE value="--cms added @RequestHeaders according to common infra instructions" />
     <MESSAGE value="--cms added removed @CrossOrigin header from all controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="--cms added removed @CrossOrigin header from all controllers" />
+    <MESSAGE value="--cms added new branch quiz_with_ci" />
+    <option name="LAST_COMMIT_MESSAGE" value="--cms added new branch quiz_with_ci" />
   </component>
 </project>
