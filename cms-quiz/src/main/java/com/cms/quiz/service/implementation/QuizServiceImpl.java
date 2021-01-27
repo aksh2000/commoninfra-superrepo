@@ -75,7 +75,7 @@ public class QuizServiceImpl implements IQuizService {
         List<User> users = new ArrayList<>();
 
         for (QuizLeaderBoard quizLeaderBoard:quizLeaderBoards) {
-            User user = restTemplate.getForObject("http://CMS-USER/cmsUser/getUserDetails/"+quizLeaderBoard.getUserId(), User.class);
+            User user = restTemplate.getForObject("http://CMS-USER/cmsUser/getUserDetailsInternal/"+quizLeaderBoard.getUserId(), User.class);
             LeaderBoardList leaderBoardList = new LeaderBoardList();
             leaderBoardList.setUser(user);
             leaderBoardList.setScore(quizLeaderBoard.getTotalScore());

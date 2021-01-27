@@ -16,13 +16,19 @@ public class UserController {
     private
     IUserService iUserService;
 
-    @GetMapping(value = "/getUserDetails/{userId}")
-    public Optional<User> findById(@PathVariable("userId") String userId){
+    @GetMapping(value = "/getUserDetails")
+    public Optional<User> findById(@RequestHeader("username") String userId){
+        return iUserService.findById(userId);
+    }
+
+    @GetMapping(value = "/getUserDetailsInternal/{userId}")
+    public Optional<User> findByIdInternal(@PathVariable("userId") String userId){
         return iUserService.findById(userId);
     }
 
     @PostMapping(value = "/addUser")
-    public User addUser(@RequestBody User user){
+    public User addUser(@RequestBody User user, @RequestHeader("username") String userId){
+        user.setUserId(userId);
         return iUserService.addUser(user);
     }
 

@@ -33,13 +33,14 @@ public class AdminController {
     @Autowired
     NonScreenedQuestionsServiceImpl nonScreenedQuestionsService;
 
-    @GetMapping(value = "/getAdminDetails/{adminId}")
-    public Optional<Admin> findById(@PathVariable("adminId") String adminId){
+    @GetMapping(value = "/getAdminDetails")
+    public Optional<Admin> findById(@RequestHeader("username") String adminId){
         return iAdminService.findById(adminId);
     }
 
     @PostMapping(value = "/addAdmin")
-    public Admin addAdmin(@RequestBody Admin admin){
+    public Admin addAdmin(@RequestBody Admin admin, @RequestHeader("username") String adminId){
+        admin.setAdminId(adminId);
         return iAdminService.addAdmin(admin);
     }
 
@@ -47,6 +48,7 @@ public class AdminController {
     public Optional<Questions> getQuestions(@PathVariable("questionId") Long questionId){
         return iQuestionService.getQuestions(questionId);
     }
+
 
     @PostMapping(value = "/addQuestion")
     public Questions saveQuestion(@RequestBody Questions questions){

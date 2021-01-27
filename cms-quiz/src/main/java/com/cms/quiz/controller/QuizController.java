@@ -52,18 +52,19 @@ public class QuizController {
 
 
 
-    @GetMapping(value = "/getUserResponsesByUserIdAndQuizId/{userId}/{quizId}")
-    List<QuizResponses> findByUserIdAndQuizId(@PathVariable("userId") String userId, @PathVariable("quizId") Long quizId){
+    @GetMapping(value = "/getUserResponsesByUserIdAndQuizId/{quizId}")
+    List<QuizResponses> findByUserIdAndQuizId(@RequestHeader("username") String userId, @PathVariable("quizId") Long quizId){
         return iQuizResponse.findByUserIdAndQuizId(userId, quizId);
     }
 
-    @GetMapping(value = "/getSubscribedQuizzes/{userId}")
-    List<Quiz> getSubscribedQuizzes(@PathVariable("userId") String userId){
+    @GetMapping(value = "/getSubscribedQuizzes")
+    List<Quiz> getSubscribedQuizzes(@RequestHeader("username") String userId){
         return iQuizSubscriberService.getSubscribedQuizzes(userId);
     }
 
     @PostMapping(value = "/addQuiz")
-    Quiz addQuiz(@RequestBody Quiz quiz){
+    Quiz addQuiz(@RequestBody Quiz quiz, @RequestHeader("username") String adminId){
+        quiz.setAdminId(adminId);
         return iQuizService.addQuiz(quiz);
     }
 
@@ -94,7 +95,8 @@ public class QuizController {
     }
 
     @PostMapping(value = "/addQuizSubscriber")
-    QuizSubscribers addQuizSubscriber(@RequestBody QuizSubscribers quizSubscribers){
+    QuizSubscribers addQuizSubscriber(@RequestBody QuizSubscribers quizSubscribers, @RequestHeader("username") String userId){
+        quizSubscribers.setUserId(userId);
         QuizLeaderBoard quizLeaderBoard = new QuizLeaderBoard();
         quizLeaderBoard.setQuizId(quizSubscribers.getQuizId());
         quizLeaderBoard.setUserId(quizSubscribers.getUserId());
@@ -115,8 +117,8 @@ public class QuizController {
         return iQuizQuestionsService.deleteQuestion(quizId,questionId);
     }
 
-    @GetMapping(value = "/getQuizListByAdminId/{adminId}")
-    List<Quiz> getQuizListByAdminId(@PathVariable("adminId") String adminId){
+    @GetMapping(value = "/getQuizListByAdminId")
+    List<Quiz> getQuizListByAdminId(@RequestHeader("username") String adminId){
         return iQuizService.getQuizListByAdminId(adminId);
     }
 
@@ -136,8 +138,8 @@ public class QuizController {
     }
 
 
-    @GetMapping(value = "/getPreviousQuizByAdminId/{adminId}")
-    public List<Quiz> getPreviousQuiz(@PathVariable("adminId") String adminId) {
+    @GetMapping(value = "/getPreviousQuizByAdminId")
+    public List<Quiz> getPreviousQuiz(@RequestHeader("username") String adminId) {
         List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
         List<Quiz> quizList1 = new ArrayList<>();
         Date date = new Date();
@@ -149,8 +151,8 @@ public class QuizController {
         return quizList1;
     }
 
-    @GetMapping(value = "/getCurrentQuizByAdminId/{adminId}")
-    public List<Quiz> getCurrentQuiz(@PathVariable("adminId") String adminId) {
+    @GetMapping(value = "/getCurrentQuizByAdminId")
+    public List<Quiz> getCurrentQuiz(@RequestHeader("username") String adminId) {
         List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
         List<Quiz> quizList1 = new ArrayList<>();
         Date date = new Date();
@@ -162,8 +164,8 @@ public class QuizController {
         return quizList1;
     }
 
-    @GetMapping(value = "/getFutureQuizByAdminId/{adminId}")
-    public List<Quiz> getFutureQuiz(@PathVariable("adminId") String adminId) {
+    @GetMapping(value = "/getFutureQuizByAdminId")
+    public List<Quiz> getFutureQuiz(@RequestHeader("username") String adminId) {
         List<Quiz> quizList = iQuizService.getQuizListByAdminId(adminId);
         List<Quiz> quizList1 = new ArrayList<>();
         Date date = new Date();
@@ -186,19 +188,20 @@ public class QuizController {
     public List<LeaderBoardList> getLeaderBoard(@PathVariable("quizId") Long quizId){
         return iQuizService.getLeaderBoard(quizId);
     }
-    @GetMapping(value = "/getUserSubscriptionStatus/{quizId}/{userId}")
-    public QuizSubscribers getUserSubscriptionStatus(@PathVariable("quizId") Long quizId,@PathVariable("userId")String userId){
+    @GetMapping(value = "/getUserSubscriptionStatus/{quizId}")
+    public QuizSubscribers getUserSubscriptionStatus(@PathVariable("quizId") Long quizId,@RequestHeader("username") String userId){
         return iQuizSubscriberService.getUserSubscriptionStatus(quizId,userId);
     }
 
     @PostMapping(value = "/skipInitialize")
-    public SkipCount save(@RequestBody SkipCount skipCount) {
+    public SkipCount save(@RequestBody SkipCount skipCount,@RequestHeader("username") String userId) {
         //skipCount.setSkipCount(0);
+        skipCount.setUserId(userId);
         return iSkipCountService.save(skipCount);
     }
 
-    @GetMapping(value = "/getSkipCount/{quizId}/{userId}")
-    public SkipCount getCount(@PathVariable("quizId")long quizId, @PathVariable("userId")String userId) {
+    @GetMapping(value = "/getSkipCount/{quizId}")
+    public SkipCount getCount(@PathVariable("quizId")long quizId, @RequestHeader("username") String userId) {
         SkipCount skipCount = iSkipCountService.findByQuizIdAndUserId(quizId,userId);
         int count = skipCount.getCount();
         if(count >= 3) {
@@ -211,7 +214,8 @@ public class QuizController {
     }
 
     @PostMapping("/addQuizResponse")
-    public QuizResponses addResponse(@RequestBody QuizResponses quizResponses){
+    public QuizResponses addResponse(@RequestBody QuizResponses quizResponses, @RequestHeader("username") String userId){
+        quizResponses.setUserId(userId);
         System.out.println("Question id = "+quizResponses.getQuestionId());
         QuestionDetails questionDetails = restTemplate.getForObject("http://CMS-ADMIN/cmsAdmin/getQuestionDetails/"+quizResponses.getQuestionId(),QuestionDetails.class);
 
@@ -233,23 +237,23 @@ public class QuizController {
         return quizDate.compareTo(d) < 0 ? true : false;
     }
 
-    @GetMapping(value = "/quizStarted/{userId}/{quizId}")
-    public int quizStarted(@PathVariable("userId") String userId,@PathVariable("quizId") Long quizId){
+    @GetMapping(value = "/quizStarted/{quizId}")
+    public int quizStarted(@RequestHeader("username") String userId,@PathVariable("quizId") Long quizId){
         return iQuizSubscriberService.updateStartTime(userId,quizId);
     }
 
-    @GetMapping(value = "/quizEnded/{userId}/{quizId}")
-    public int quizEnded(@PathVariable("userId") String userId,@PathVariable("quizId") Long quizId){
+    @GetMapping(value = "/quizEnded/{quizId}")
+    public int quizEnded(@RequestHeader("username") String userId,@PathVariable("quizId") Long quizId){
         return iQuizSubscriberService.updateEndTime(userId,quizId);
     }
 
-    @GetMapping(value = "/getSolvedQuestions/{quizId}/{userId}")
-    public List<QuizResponses> getSolvedQuestions(@PathVariable("userId") String userId,@PathVariable("quizId") Long quizId){
+    @GetMapping(value = "/getSolvedQuestions/{quizId}")
+    public List<QuizResponses> getSolvedQuestions(@RequestHeader("username") String userId,@PathVariable("quizId") Long quizId){
         return iQuizResponse.findByUserIdAndQuizId(userId,quizId);
     }
 
-    @GetMapping(value = "/getRemainingTime/{quizId}/{userId}")
-    public long getRemainingTime(@PathVariable("quizId") Long quizId,@PathVariable("userId") String userId){
+    @GetMapping(value = "/getRemainingTime/{quizId}")
+    public long getRemainingTime(@PathVariable("quizId") Long quizId,@RequestHeader("username") String userId){
         QuizSubscribers quizSubscribers = iQuizSubscriberService.findByQuizIdAndUserId(quizId,userId);
         Date startTime = quizSubscribers.getUserStartTime();
         Date date = new Date();
