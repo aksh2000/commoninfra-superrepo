@@ -109,5 +109,18 @@ public class UsersController {
         return iUserService.switchPrivacy(userEmail);
     }
 
+    @PutMapping("/updateUserProfile")
+    User updateUserProfile(@RequestBody User user,@RequestHeader("username") String userEmail ){
+        user.setUserEmail(userEmail);
+        return iUserService.addUser(user);
+    }
+
+    @PutMapping("/updateBusinessProfile")
+    Business updateBusinessProfile(@RequestBody Business business, @RequestHeader("username") String businessEmail){
+        business.setBusinessEmail(businessEmail);
+        return iBusinessService.addBusiness(business);
+    }
+
+
 
 }
