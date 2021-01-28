@@ -21,4 +21,29 @@ public class EngagementServiceImpl implements IEngagementService {
     public List<Engagement> findByUserBusinessEmail(String userBusinessEmail) {
         return engagementRepository.findByUserBusinessEmail(userBusinessEmail);
     }
+
+    @Override
+    public List<Engagement> findBySecondaryEmail(String secondaryEmail) {
+        return engagementRepository.findBySecondaryEmail(secondaryEmail);
+    }
+
+    @Override
+    public List<Engagement> getFollowRequests(String userBusinessEmail) {
+        return engagementRepository.getFollowRequests(userBusinessEmail);
+    }
+
+    @Override
+    public Long acceptFollowRequests(String secondaryEmail, String userBusinessEmail) {
+        return engagementRepository.acceptFollowRequests(secondaryEmail,userBusinessEmail);
+    }
+
+    @Override
+    public Long rejectFollowRequests(String secondaryEmail, String userBusinessEmail) {
+        return engagementRepository.rejectFollowRequests(secondaryEmail, userBusinessEmail);
+    }
+
+    @Override
+    public Long acceptAllFollowRequests(String userEmail) {
+        return engagementRepository.acceptAllFollowRequests(userEmail);
+    }
 }

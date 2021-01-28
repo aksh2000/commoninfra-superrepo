@@ -50,6 +50,11 @@ public class UsersController {
     @PostMapping("/addEngagement")
     Engagement addEngagement(@RequestBody Engagement engagement, @RequestHeader("username") String secondaryEmail){
         engagement.setSecondaryEmail(secondaryEmail);
+        User userDetail = iUserService.getUserDetails(engagement.getUserBusinessEmail());
+        if(userDetail == null){
+            engagement.setApproved(true);
+        }else engagement.setApproved(!userDetail.isPrivate());
+
         return iEngagementService.addEngagement(engagement);
     }
 
@@ -64,5 +69,45 @@ public class UsersController {
         }
         return users;
     }
+
+    @GetMapping("/getFollowingDetails")
+    List<User> getFollowingDetails(@RequestHeader("username") String secondaryEmail){
+
+        List<Engagement> engagements = iEngagementService.findBySecondaryEmail(secondaryEmail);
+        List<User> users  = new ArrayList<>();
+        for (Engagement engagement:engagements) {
+            User user = iUserService.getUserDetails(engagement.getUserBusinessEmail());
+            users.add(user);
+        }
+        return users;
+    }
+
+    @GetMapping("/getFollowRequests")
+    List<User> getFollowRequests(@RequestHeader("username") String userBusinessEmail){
+        List<Engagement> engagements = iEngagementService.getFollowRequests(userBusinessEmail);
+        List<User> users  = new ArrayList<>();
+        for (Engagement engagement:engagements) {
+            User user = iUserService.getUserDetails(engagement.getSecondaryEmail());
+            users.add(user);
+        }
+        return users;
+    }
+
+    @GetMapping("/acceptFollowRequests/{secondaryEmail}")
+    Long acceptFollowRequests(@PathVariable("secondaryEmail") String secondaryEmail, @RequestHeader("username") String userBusinessEmail){
+        return iEngagementService.acceptFollowRequests(secondaryEmail, userBusinessEmail);
+    }
+
+    @GetMapping("/rejectFollowRequests/{secondaryEmail}")
+    Long rejectFollowRequests(@PathVariable("secondaryEmail") String secondaryEmail, @RequestHeader("username") String userBusinessEmail){
+        return iEngagementService.rejectFollowRequests(secondaryEmail, userBusinessEmail);
+    }
+
+    @GetMapping("/switchProfilePrivacy")
+    Long switchProfilePrivacy(@RequestHeader("username") String userEmail){
+        iEngagementService.acceptAllFollowRequests(userEmail);
+        return iUserService.switchPrivacy(userEmail);
+    }
+
 
 }

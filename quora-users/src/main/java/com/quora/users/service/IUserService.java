@@ -6,4 +6,6 @@ public interface IUserService {
     User addUser(User user);
 
     User getUserDetails(String userEmail);
+
+    Long switchPrivacy(String userEmail);
 }

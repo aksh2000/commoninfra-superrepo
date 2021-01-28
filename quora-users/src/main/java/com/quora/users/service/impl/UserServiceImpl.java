@@ -20,4 +20,9 @@ public class UserServiceImpl implements IUserService {
     public User getUserDetails(String userEmail) {
         return userRepository.findById(userEmail).get();
     }
+
+    @Override
+    public Long switchPrivacy(String userEmail) {
+        return userRepository.switchPrivacy(userEmail);
+    }
 }
