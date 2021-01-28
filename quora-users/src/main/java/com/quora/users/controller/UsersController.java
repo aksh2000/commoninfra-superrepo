@@ -9,6 +9,9 @@ import com.quora.users.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/quoraUsers")
 public class UsersController {
@@ -48,6 +51,18 @@ public class UsersController {
     Engagement addEngagement(@RequestBody Engagement engagement, @RequestHeader("username") String secondaryEmail){
         engagement.setSecondaryEmail(secondaryEmail);
         return iEngagementService.addEngagement(engagement);
+    }
+
+    @GetMapping("/getFollowersDetails")
+    List<User> getFollowerDetails(@RequestHeader("username") String userBusinessEmail){
+
+        List<Engagement> engagements = iEngagementService.findByUserBusinessEmail(userBusinessEmail);
+        List<User> users  = new ArrayList<>();
+        for (Engagement engagement:engagements) {
+            User user = iUserService.getUserDetails(engagement.getSecondaryEmail());
+            users.add(user);
+        }
+        return users;
     }
 
 }
