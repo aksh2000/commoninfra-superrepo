@@ -17,7 +17,7 @@
   <packaging>pom</packaging>
 
   <modules>
-        
+        <module>quora-users</module>
   </modules>
 
 </project>
