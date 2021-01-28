@@ -1,8 +1,6 @@
 package com.cms.quiz.controller;
 
-import com.cms.quiz.dto.BroadcastQuestion;
-import com.cms.quiz.dto.LeaderBoardList;
-import com.cms.quiz.dto.QuestionDetails;
+import com.cms.quiz.dto.*;
 import com.cms.quiz.entity.*;
 import com.cms.quiz.methods.Methods;
 import com.cms.quiz.service.*;
@@ -11,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.transaction.Transactional;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -223,7 +222,7 @@ public class QuizController {
     public QuizResponses addResponse(@RequestBody QuizResponses quizResponses, @RequestHeader("username") String userId){
         quizResponses.setUserId(userId);
         System.out.println("Question id = "+quizResponses.getQuestionId());
-        QuestionDetails questionDetails = restTemplate.getForObject("http://CMS-ADMIN/cmsAdmin/getQuestionDetails/"+quizResponses.getQuestionId(),QuestionDetails.class);
+        QuestionDetails questionDetails = restTemplate.getForObject("http://localhost:9001/cmsAdmin/getQuestionDetails/"+quizResponses.getQuestionId(),QuestionDetails.class);
 
         assert questionDetails != null;
         double score = Methods.getScore(quizResponses,questionDetails);
@@ -277,13 +276,62 @@ public class QuizController {
     List<Long> getBroadcastedDynamicQuizQuestions(@PathVariable("quizId") Long quizId){
         return iQuizResponse.getBroadcastedDynamicQuizQuestions(quizId);
     }
-    @GetMapping("/setEndTime/{quizId}")
-    Quiz setEndTime(@PathVariable("quizId") Long quizId){
-        return iQuizService.setEndTime(quizId);
+    @GetMapping(value = "/setEndTime/{quizId}")
+    String setEndTime(@PathVariable("quizId") Long quizId){
+        System.out.println("trying to end quiz");
+        iQuizService.setEndTime(quizId);
+        iQuizSubscriberService.updateEndTimeOfDynamicQuizSubscribers(quizId);
+        return "End time set successfully";
     }
 
     @GetMapping("/getMainLeaderBoard")
     List<LeaderBoardList> getMainLeaderBoard(){
         return iQuizService.getMainLeaderBoard();
     }
+
+    @GetMapping("/getUserRating")
+    public LeaderBoardList GetUserRating(@RequestHeader("username") String userId){
+        List<LeaderBoardList> leaderBoardLists=getMainLeaderBoard();
+        for (LeaderBoardList l:leaderBoardLists) {
+            if (l.getUser().getUserId().equals(userId)) {
+                return l;
+            }
+        }
+        LeaderBoardList leaderBoardList=new LeaderBoardList();
+        leaderBoardList.setUser(restTemplate.getForObject("getUserDetailsInternal/"+userId, User.class));
+        leaderBoardList.setScore(0);
+        return leaderBoardList;
+    }
+
+    @GetMapping(value = "/sendToDataAnalytics/{quizId}")
+    public boolean sendToDataAnalytics(@PathVariable("quizId")long quizId) {
+        DataAnalyticsDto dataAnalyticsDto = new DataAnalyticsDto();
+        dataAnalyticsDto.setUserId(String.valueOf(quizId));
+        Quiz quiz = iQuizService.getQuizDetails(quizId).get();
+        dataAnalyticsDto.setStartTime(quiz.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
+        dataAnalyticsDto.setChannel_id(4);
+        dataAnalyticsDto.setUsersRegistered(getQuizSubscribers(quizId).size());
+        dataAnalyticsDto.setWinnerId(getLeaderBoard(quizId).get(0).getUser().getEmail());
+//        QuestionDetails questionDetails = getQuizQuestionsWithContent(quizId).get(0);
+        System.out.println("http://localhost:9001/cmsAdmin/getQuestionDetails/"+
+                iQuizResponse.getMostAnsweredQuestionId(quizId));
+        QuestionDetails questionDetails1 = restTemplate.getForObject
+                ("http://localhost:9001/cmsAdmin/getQuestionDetails/"+
+                        iQuizResponse.getMostAnsweredQuestionId(quizId), QuestionDetails.class);
+        dataAnalyticsDto.setMostAnsQ(questionDetails1.getContent()+"fuck this shit ");
+//        System.out.println(dataAnalyticsDto.getMostAnsQ());
+        System.out.println(dataAnalyticsDto.getUserId());
+        System.out.println(dataAnalyticsDto.getWinnerId());
+        System.out.println("before template");
+        restTemplate.postForObject("http://10.177.2.29:8760/analytics/internal/query",dataAnalyticsDto,Void.class);
+        System.out.println("after template");
+        return true;
+    }
+
+//    @GetMapping("/getUserRating")
+//    LeaderBoardList getUserRating(@RequestHeader("username") String userId){
+//        return iQuizLeaderBoard.getUserRating(userId);
+//    }
+
+
 }

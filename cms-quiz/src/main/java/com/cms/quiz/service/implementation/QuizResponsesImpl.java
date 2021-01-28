@@ -20,8 +20,6 @@ public class QuizResponsesImpl implements IQuizResponseService {
     }
 
 
-
-
     @Override
     public QuizResponses addQuizResponse(QuizResponses quizResponses) {
         return quizResponsesRepositry.save(quizResponses);
@@ -30,5 +28,11 @@ public class QuizResponsesImpl implements IQuizResponseService {
     @Override
     public List<QuizResponses> findByUserIdAndQuizId(String userId, Long quizId) {
         return quizResponsesRepositry.findByUserIdAndQuizId(userId,quizId);
+    }
+
+    @Override
+    public Long getMostAnsweredQuestionId(Long quizId) {
+        List<Object[]> objects = quizResponsesRepositry.getMostAnsweredQuestionId(quizId);
+        return Long.parseLong(objects.get(0)[1]+"");
     }
 }

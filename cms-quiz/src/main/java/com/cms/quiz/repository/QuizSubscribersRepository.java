@@ -28,5 +28,11 @@ public interface QuizSubscribersRepository extends JpaRepository<QuizSubscribers
     @Transactional
     @Modifying
     @Query(value = "update subscribers  set user_end_time = ?1,status = 2 where user_id = ?2 and quiz_id = ?3",nativeQuery = true)
-    int upDateEndTime(Date d,String userId, Long quizId);
+    int upDateEndTime(Date date,String userId, Long quizId);
+
+    @Transactional
+    @Modifying
+    @Query(value = "update subscribers  set user_end_time = ?1,status = 2 where quiz_id = ?2",nativeQuery = true)
+    int updateEndTimeOfDynamicQuizSubscribers(Date date, Long quizId);
+
 }

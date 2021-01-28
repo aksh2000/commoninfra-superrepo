@@ -19,4 +19,5 @@ public interface IQuizSubscriberService {
     int updateEndTime(String userId, Long quizId);
 
     QuizSubscribers findByQuizIdAndUserId(Long quizId, String userId);
+    int updateEndTimeOfDynamicQuizSubscribers(Long quizId);
 }

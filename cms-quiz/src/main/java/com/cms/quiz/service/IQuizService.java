@@ -19,7 +19,7 @@ public interface IQuizService {
 
     List<LeaderBoardList> getLeaderBoard(Long quizId);
 
-    Quiz setEndTime(Long quizId);
+    void setEndTime(Long quizId);
 
 
     List<LeaderBoardList> getMainLeaderBoard();

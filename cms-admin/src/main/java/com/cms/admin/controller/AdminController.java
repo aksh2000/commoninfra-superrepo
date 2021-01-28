@@ -88,10 +88,12 @@ public class AdminController {
         cacheRepository.save(cacheQuestion);
     }
     @GetMapping(value="/getCacheQuestion/{quizId}")
-    public CacheQuestion getCachedQuestion(@PathVariable("quizId")long quizId){
-        return cacheRepository.findById(quizId).get();
+    public CacheQuestion getCachedQuestion(@PathVariable("quizId")long quizId) {
+        try {
+            return cacheRepository.findById(quizId).get();
+        }
+        catch (Exception e){return null;}
     }
-
     @GetMapping(value = "/getCountOfNonScreenedQuestions")
     public Long getCountOfNonScreenedQuestions(){
 //        System.out.println(username);

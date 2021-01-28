@@ -3,9 +3,11 @@ package com.cms.quiz.repository;
 import com.cms.quiz.entity.Quiz;
 import javafx.scene.chart.ValueAxis;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -23,6 +25,9 @@ public interface QuizRepository extends JpaRepository<Quiz,Long> {
 @Query(value = "select * from quiz where type = ?2 and end_time > ?1",nativeQuery = true )
 List<Quiz> getDynamicQuiz(Date d, int type);
 
+    @Modifying
+//    @Transactional
+    @Transactional
     @Query(value = "update quiz set end_time = ?1 where quiz_id = ?2",nativeQuery = true)
-    Quiz setEndTime(Date date, Long quizId);
+    void setEndTime(Date date, Long quizId);
 }

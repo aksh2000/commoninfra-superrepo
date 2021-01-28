@@ -1,5 +1,6 @@
 package com.cms.quiz.service.implementation;
 
+import com.cms.quiz.dto.LeaderBoardList;
 import com.cms.quiz.entity.QuizLeaderBoard;
 import com.cms.quiz.repository.QuizLeaderBoardRepository;
 import com.cms.quiz.service.IQuizLeaderBoard;
@@ -21,4 +22,9 @@ public class QuizLeaderBoardServiceImpl implements IQuizLeaderBoard {
     public QuizLeaderBoard addLeaderBoard(QuizLeaderBoard quizLeaderBoard) {
         return quizLeaderBoardRepository.save(quizLeaderBoard);
     }
+
+//    @Override
+//    public LeaderBoardList getUserRating(String userId) {
+//        return quizLeaderBoardRepository.getUserRating(userId);
+//    }
 }

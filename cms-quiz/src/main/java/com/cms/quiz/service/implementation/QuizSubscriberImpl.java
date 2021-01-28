@@ -55,5 +55,9 @@ public class QuizSubscriberImpl implements IQuizSubscriberService {
         return quizSubscribersRepository.findByQuizIdAndUserId(quizId,userId);
     }
 
-
+    @Override
+    public int updateEndTimeOfDynamicQuizSubscribers(Long quizId) {
+        Date date = new Date();
+        return quizSubscribersRepository.updateEndTimeOfDynamicQuizSubscribers(date, quizId);
+    }
 }

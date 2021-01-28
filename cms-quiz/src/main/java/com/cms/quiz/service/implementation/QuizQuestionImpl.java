@@ -44,10 +44,8 @@ public class QuizQuestionImpl implements IQuizQuestionsService {
         List<QuestionDetails> questionDetails;
         questionDetails = new ArrayList<>();
         List<QuizQuestions> quizQuestions = quizQuestionsRepository.findByQuizId(quizId);
-        System.out.println("Inside Get Quiz Questions!!!");
         for (QuizQuestions quizQuestion: quizQuestions) {
-            System.out.println("LL");
-            QuestionDetails questionDetails1 = restTemplate.getForObject("http://CMS-ADMIN/cmsAdmin/getQuestionDetails/"+quizQuestion.getQuestionId(), QuestionDetails.class);
+            QuestionDetails questionDetails1 = restTemplate.getForObject("http://localhost:9001/cmsAdmin/getQuestionDetails/"+quizQuestion.getQuestionId(), QuestionDetails.class);
             questionDetails.add(questionDetails1);
         }
         return questionDetails;

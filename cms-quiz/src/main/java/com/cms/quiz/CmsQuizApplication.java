@@ -18,7 +18,6 @@ public class CmsQuizApplication {
 	}
 
 	@Bean
-	@LoadBalanced
 	RestTemplate getRestTemplate(){
 		return new RestTemplate();
 	}

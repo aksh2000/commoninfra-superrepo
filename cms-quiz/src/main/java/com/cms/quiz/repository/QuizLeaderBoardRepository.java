@@ -23,5 +23,8 @@ public interface QuizLeaderBoardRepository extends JpaRepository<QuizLeaderBoard
 
     @Query(value = "select user_id, sum(total_score) from leaderboard group by user_id order by sum desc", nativeQuery = true)
     List<Object[]> getMainLeaderBoard();
+
+//    @Query(value = "select * from leaderboard")
+//    LeaderBoardList getUserRating(String userId);
 }
 

@@ -12,4 +12,6 @@ public interface IQuizResponseService {
 
 
     List<Long> getBroadcastedDynamicQuizQuestions(Long quizId);
+
+    Long getMostAnsweredQuestionId(Long quizId);
 }

@@ -78,7 +78,7 @@ public class QuizServiceImpl implements IQuizService {
         List<User> users = new ArrayList<>();
 
         for (QuizLeaderBoard quizLeaderBoard:quizLeaderBoards) {
-            User user = restTemplate.getForObject("http://CMS-USER/cmsUser/getUserDetailsInternal/"+quizLeaderBoard.getUserId(), User.class);
+            User user = restTemplate.getForObject("http://localhost:9002/cmsUser/getUserDetailsInternal/"+quizLeaderBoard.getUserId(), User.class);
             LeaderBoardList leaderBoardList = new LeaderBoardList();
             leaderBoardList.setUser(user);
             leaderBoardList.setScore(quizLeaderBoard.getTotalScore());
@@ -88,9 +88,10 @@ public class QuizServiceImpl implements IQuizService {
     }
 
     @Override
-    public Quiz setEndTime(Long quizId) {
+    public void setEndTime(Long quizId) {
         Date date = new Date();
-        return quizRepository.setEndTime(date,quizId);
+        System.out.println(quizId+" this quiz has ended ");
+        quizRepository.setEndTime(date,quizId);
     }
 
     @Override
@@ -99,7 +100,7 @@ public class QuizServiceImpl implements IQuizService {
         List<Object[]> mainLeaderboards = quizLeaderBoardRepository.getMainLeaderBoard();
         for (int i = 0;i<mainLeaderboards.size();i++) {
             Object[] mainLeaderBoard = mainLeaderboards.get(i);
-            User user = restTemplate.getForObject("http://CMS-USER/cmsUser/getUserDetailsInternal/"+String.valueOf(mainLeaderBoard[0]), User.class);
+            User user = restTemplate.getForObject("http://localhost:9002/cmsUser/getUserDetailsInternal/"+String.valueOf(mainLeaderBoard[0]), User.class);
             LeaderBoardList leaderBoardList = new LeaderBoardList();
             leaderBoardList.setUser(user);
             leaderBoardList.setScore(Double.parseDouble(mainLeaderBoard[1]+""));
