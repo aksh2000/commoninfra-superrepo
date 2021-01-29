@@ -121,6 +121,34 @@ public class UsersController {
         return iBusinessService.addBusiness(business);
     }
 
+    @GetMapping("/getFollowersCount")
+    Long getFollowersCount(@RequestHeader("username") String userBusinessEmail){
+        return iEngagementService.getFollowersCount(userBusinessEmail);
+    }
+
+    @GetMapping("/getFollowingCount")
+    Long getFollowingCount(@RequestHeader("username") String secondaryEmail){
+        return iEngagementService.getFollowingCount(secondaryEmail);
+    }
+
+    @PutMapping("/addToTeam/{userEmail}")
+    User addToTeam(@RequestHeader("username") String associatedBusinessEmail, @PathVariable("userEmail") String userEmail){
+        User user = iUserService.getUserDetails(userEmail);
+        user.setAssociatedBusinessEmail(associatedBusinessEmail);
+        return iUserService.addUser(user);
+    }
+
+    @GetMapping("/getTeamMembers")
+    List<User> getTeamMembers(@RequestHeader("username") String associatedBusinessEmail){
+        return iUserService.findByAssociatedBusinessEmail(associatedBusinessEmail);
+    }
+
+    @PutMapping("/removeFromTeam/{userEmail}")
+    User removeFromTeam(@PathVariable("userEmail") String userEmail){
+        User user  =iUserService.getUserDetails(userEmail);
+        user.setAssociatedBusinessEmail("");
+        return iUserService.addUser(user);
+    }
 
 
 }

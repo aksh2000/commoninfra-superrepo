@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
@@ -14,4 +15,6 @@ public interface UserRepository extends JpaRepository<User, String> {
     @Transactional
     @Query(value = "update quora_users set is_private = not is_private where user_email = ?1", nativeQuery = true)
     Long switchPrivacy(String userEmail);
+
+    List<User> findByAssociatedBusinessEmail(String associatedBusinessEmail);
 }

@@ -18,4 +18,8 @@ public interface IEngagementService {
     Long rejectFollowRequests(String secondaryEmail, String userBusinessEmail);
 
     Long acceptAllFollowRequests(String userEmail);
+
+    Long getFollowersCount(String userBusinessEmail);
+
+    Long getFollowingCount(String secondaryEmail);
 }

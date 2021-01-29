@@ -46,4 +46,14 @@ public class EngagementServiceImpl implements IEngagementService {
     public Long acceptAllFollowRequests(String userEmail) {
         return engagementRepository.acceptAllFollowRequests(userEmail);
     }
+
+    @Override
+    public Long getFollowersCount(String userBusinessEmail) {
+        return engagementRepository.getFollowersCount(userBusinessEmail);
+    }
+
+    @Override
+    public Long getFollowingCount(String secondaryEmail) {
+        return engagementRepository.getFollowingCount(secondaryEmail);
+    }
 }
