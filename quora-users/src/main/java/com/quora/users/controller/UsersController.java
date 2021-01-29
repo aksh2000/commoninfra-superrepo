@@ -70,6 +70,18 @@ public class UsersController {
         return users;
     }
 
+    @GetMapping("/getFollowersDetailsByUserEmail/{userEmail}")
+    List<User> getFollowersDetailsByUserEmail(@PathVariable("userEmail") String userBusinessEmail){
+
+        List<Engagement> engagements = iEngagementService.findByUserBusinessEmail(userBusinessEmail);
+        List<User> users  = new ArrayList<>();
+        for (Engagement engagement:engagements) {
+            User user = iUserService.getUserDetails(engagement.getSecondaryEmail());
+            users.add(user);
+        }
+        return users;
+    }
+
     @GetMapping("/getFollowingDetails")
     List<User> getFollowingDetails(@RequestHeader("username") String secondaryEmail){
 
@@ -81,6 +93,20 @@ public class UsersController {
         }
         return users;
     }
+
+    @GetMapping("/getFollowingDetailsByUserEmail/{userEmail}")
+    List<User> getFollowingDetailsByUserEmail(@PathVariable("userEmail") String secondaryEmail){
+
+        List<Engagement> engagements = iEngagementService.findBySecondaryEmail(secondaryEmail);
+        List<User> users  = new ArrayList<>();
+        for (Engagement engagement:engagements) {
+            User user = iUserService.getUserDetails(engagement.getUserBusinessEmail());
+            users.add(user);
+        }
+        return users;
+    }
+
+
 
     @GetMapping("/getFollowRequests")
     List<User> getFollowRequests(@RequestHeader("username") String userBusinessEmail){

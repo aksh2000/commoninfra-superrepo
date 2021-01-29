@@ -6,17 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e784b5d2-d359-40d7-941a-9fc94c87c27a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticQuora/src/main/java/com/example/elasticQuora/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticQuora/src/main/java/com/example/elasticQuora/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticQuora/src/main/java/com/example/elasticQuora/ElasticEntity/Business.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticQuora/src/main/java/com/example/elasticQuora/ElasticEntity/Business.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/repository/EngagementRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/repository/EngagementRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/IBusinessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/IBusinessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/IEngagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/IEngagementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/impl/BusinessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/impl/BusinessServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/impl/EngagementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/impl/EngagementServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +41,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.QuoraUsersApplication">
+  <component name="RunManager" selected="Application.ElasticQuoraApplication">
     <configuration name="ElasticQuoraApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.elasticQuora.ElasticQuoraApplication" />
       <module name="elasticQuora" />
