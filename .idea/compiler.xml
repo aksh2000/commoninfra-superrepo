@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="registry" />
+        <module name="elasticQuora" />
         <module name="gateway" />
         <module name="quora-users" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common-infra" target="1.5" />
+      <module name="elasticQuora" target="1.8" />
       <module name="gateway" target="1.8" />
       <module name="quora-users" target="1.8" />
       <module name="registry" target="1.8" />
@@ -21,6 +23,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="elasticQuora" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="quora-users" options="-parameters" />
       <module name="registry" options="-parameters" />

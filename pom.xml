@@ -18,7 +18,7 @@
 
   <modules>
         <module>quora-users</module>
-
+        <module>elasticQuora</module>
   </modules>
 
 </project>
