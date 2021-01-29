@@ -1,0 +1,57 @@
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <annotationProcessing>\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\n        <outputRelativeToContentRoot value=\"true\" />\n        <module name=\"gateway\" />\n        <module name=\"registry\" />\n      </profile>\n    </annotationProcessing>\n    <bytecodeTargetLevel>\n      <module name=\"common-infra\" target=\"1.5\" />\n      <module name=\"gateway\" target=\"1.8\" />\n      <module name=\"registry\" target=\"1.8\" />\n    </bytecodeTargetLevel>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 72f6ed9bf37a50e506aa1163fb7fa1a0c562b586)
++++ b/.idea/compiler.xml	(date 1611923414525)
+@@ -2,12 +2,13 @@
+ <project version="4">
+   <component name="CompilerConfiguration">
+     <annotationProcessing>
++      <profile default="true" name="Default" enabled="true" />
+       <profile name="Maven default annotation processors profile" enabled="true">
+         <sourceOutputDir name="target/generated-sources/annotations" />
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+         <outputRelativeToContentRoot value="true" />
+-        <module name="gateway" />
+         <module name="registry" />
++        <module name="gateway" />
+       </profile>
+     </annotationProcessing>
+     <bytecodeTargetLevel>
+@@ -16,4 +17,10 @@
+       <module name="registry" target="1.8" />
+     </bytecodeTargetLevel>
+   </component>
++  <component name="JavacSettings">
++    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
++      <module name="gateway" options="-parameters" />
++      <module name="registry" options="-parameters" />
++    </option>
++  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"Encoding\">\n    <file url=\"file://$PROJECT_DIR$/gateway\" charset=\"UTF-8\" />\n    <file url=\"file://$PROJECT_DIR$/registry\" charset=\"UTF-8\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+--- a/.idea/encodings.xml	(revision 72f6ed9bf37a50e506aa1163fb7fa1a0c562b586)
++++ b/.idea/encodings.xml	(date 1611923414527)
+@@ -2,6 +2,8 @@
+ <project version="4">
+   <component name="Encoding">
+     <file url="file://$PROJECT_DIR$/gateway" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/gateway/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/registry" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/registry/src/main/java" charset="UTF-8" />
+   </component>
+ </project>
+\ No newline at end of file
