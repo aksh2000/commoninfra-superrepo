@@ -38,4 +38,6 @@ public interface EngagementRepository extends JpaRepository<Engagement, String> 
 
     @Query(value = "select count(distinct(user_business_email)) from quora_engagement where secondary_email = ?1 and is_approved = true", nativeQuery = true)
     Long getFollowingCount(String secondaryEmail);
+
+    Engagement findBySecondaryEmailAndUserBusinessEmail(String secondaryEmail, String userBusinessEmail);
 }

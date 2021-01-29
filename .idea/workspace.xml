@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e784b5d2-d359-40d7-941a-9fc94c87c27a" name="Default Changelist" comment="">
+    <list default="true" id="6ab4801c-17bf-4881-b514-01dc8379eaa7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elasticQuora/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/elasticQuora/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/repository/EngagementRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/repository/EngagementRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/IEngagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/IEngagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/impl/EngagementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/quora-users/src/main/java/com/quora/users/service/impl/EngagementServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,13 +39,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ElasticQuoraApplication">
+  <component name="RunManager" selected="Application.QuoraUsersApplication">
     <configuration name="ElasticQuoraApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.elasticQuora.ElasticQuoraApplication" />
       <module name="elasticQuora" />
@@ -174,6 +179,9 @@
     </task>
     <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="--quora akshay --added the structures" />

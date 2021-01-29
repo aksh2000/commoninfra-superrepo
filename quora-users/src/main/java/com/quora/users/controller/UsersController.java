@@ -36,6 +36,12 @@ public class UsersController {
         return iUserService.getUserDetails(userEmail);
     }
 
+    @GetMapping("/getUserDetailsByUserEmail/{userEmail}")
+    User getUserDetailsByUserEmail(@PathVariable("userEmail")  String userEmail){
+        return iUserService.getUserDetails(userEmail);
+    }
+
+
     @PostMapping("/addBusiness")
     Business addBusiness(@RequestBody Business business, @RequestHeader("username") String businessEmail){
         business.setBusinessEmail(businessEmail);
@@ -182,5 +188,14 @@ public class UsersController {
         return user == null;
     }
 
+    @GetMapping("/getFollowStatus/{userBusinessEmail}")
+    Engagement getFollowStatus(@PathVariable("userBusinessEmail") String userBusinessEmail, @RequestHeader("username") String secondaryEmail){
+        return iEngagementService.getFollowStatus(secondaryEmail, userBusinessEmail);
+    }
+
+    @GetMapping("/unfollowUser/{userBusinessEmail}")
+    Integer unfollowUser(@PathVariable("userBusinessEmail")String userBusinessEmail, @RequestHeader("username")String secondaryEmail) {
+        return iEngagementService.rejectFollowRequests(secondaryEmail, userBusinessEmail);
+    }
 
 }

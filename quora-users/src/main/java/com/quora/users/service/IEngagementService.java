@@ -22,4 +22,6 @@ public interface IEngagementService {
     Long getFollowersCount(String userBusinessEmail);
 
     Long getFollowingCount(String secondaryEmail);
+
+    Engagement getFollowStatus(String secondaryEmail, String userBusinessEmail);
 }
