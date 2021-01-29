@@ -21,17 +21,17 @@ public interface EngagementRepository extends JpaRepository<Engagement, String> 
     @Modifying
     @Transactional
     @Query(value = "update quora_engagement set is_approved = true where user_business_email = ?2 and secondary_email = ?1", nativeQuery = true)
-    Long acceptFollowRequests(String secondaryEmail, String userBusinessEmail);
+    Integer acceptFollowRequests(String secondaryEmail, String userBusinessEmail);
 
     @Modifying
     @Transactional
     @Query(value = "delete from quora_engagement where user_business_email = ?2 and secondary_email = ?1", nativeQuery = true)
-    Long rejectFollowRequests(String secondaryEmail, String userBusinessEmail);
+    Integer rejectFollowRequests(String secondaryEmail, String userBusinessEmail);
 
     @Modifying
     @Transactional
     @Query(value = "update quora_engagement set is_approved = true where user_business_email = ?1", nativeQuery = true)
-    Long acceptAllFollowRequests(String userEmail);
+    Integer acceptAllFollowRequests(String userEmail);
 
     @Query(value = "select count(distinct(secondary_email)) from quora_engagement where user_business_email = ?1 and is_approved = true", nativeQuery = true)
     Long getFollowersCount(String userBusinessEmail);

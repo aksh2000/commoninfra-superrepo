@@ -9,7 +9,7 @@ public interface IUserService {
 
     User getUserDetails(String userEmail);
 
-    Long switchPrivacy(String userEmail);
+    Integer switchPrivacy(String userEmail);
 
     List<User> findByAssociatedBusinessEmail(String associatedBusinessEmail);
 }

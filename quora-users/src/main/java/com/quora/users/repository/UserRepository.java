@@ -14,7 +14,7 @@ public interface UserRepository extends JpaRepository<User, String> {
     @Modifying
     @Transactional
     @Query(value = "update quora_users set is_private = not is_private where user_email = ?1", nativeQuery = true)
-    Long switchPrivacy(String userEmail);
+    Integer switchPrivacy(String userEmail);
 
     List<User> findByAssociatedBusinessEmail(String associatedBusinessEmail);
 }

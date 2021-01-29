@@ -13,11 +13,11 @@ public interface IEngagementService {
 
     List<Engagement> getFollowRequests(String userBusinessEmail);
 
-    Long acceptFollowRequests(String secondaryEmail, String userBusinessEmail);
+    Integer acceptFollowRequests(String secondaryEmail, String userBusinessEmail);
 
-    Long rejectFollowRequests(String secondaryEmail, String userBusinessEmail);
+    Integer rejectFollowRequests(String secondaryEmail, String userBusinessEmail);
 
-    Long acceptAllFollowRequests(String userEmail);
+    Integer acceptAllFollowRequests(String userEmail);
 
     Long getFollowersCount(String userBusinessEmail);
 

@@ -33,17 +33,17 @@ public class EngagementServiceImpl implements IEngagementService {
     }
 
     @Override
-    public Long acceptFollowRequests(String secondaryEmail, String userBusinessEmail) {
+    public Integer acceptFollowRequests(String secondaryEmail, String userBusinessEmail) {
         return engagementRepository.acceptFollowRequests(secondaryEmail,userBusinessEmail);
     }
 
     @Override
-    public Long rejectFollowRequests(String secondaryEmail, String userBusinessEmail) {
+    public Integer rejectFollowRequests(String secondaryEmail, String userBusinessEmail) {
         return engagementRepository.rejectFollowRequests(secondaryEmail, userBusinessEmail);
     }
 
     @Override
-    public Long acceptAllFollowRequests(String userEmail) {
+    public Integer acceptAllFollowRequests(String userEmail) {
         return engagementRepository.acceptAllFollowRequests(userEmail);
     }
 

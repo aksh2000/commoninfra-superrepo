@@ -94,17 +94,17 @@ public class UsersController {
     }
 
     @GetMapping("/acceptFollowRequests/{secondaryEmail}")
-    Long acceptFollowRequests(@PathVariable("secondaryEmail") String secondaryEmail, @RequestHeader("username") String userBusinessEmail){
+    Integer acceptFollowRequests(@PathVariable("secondaryEmail") String secondaryEmail, @RequestHeader("username") String userBusinessEmail){
         return iEngagementService.acceptFollowRequests(secondaryEmail, userBusinessEmail);
     }
 
     @GetMapping("/rejectFollowRequests/{secondaryEmail}")
-    Long rejectFollowRequests(@PathVariable("secondaryEmail") String secondaryEmail, @RequestHeader("username") String userBusinessEmail){
+    Integer rejectFollowRequests(@PathVariable("secondaryEmail") String secondaryEmail, @RequestHeader("username") String userBusinessEmail){
         return iEngagementService.rejectFollowRequests(secondaryEmail, userBusinessEmail);
     }
 
     @GetMapping("/switchProfilePrivacy")
-    Long switchProfilePrivacy(@RequestHeader("username") String userEmail){
+    Integer switchProfilePrivacy(@RequestHeader("username") String userEmail){
         iEngagementService.acceptAllFollowRequests(userEmail);
         return iUserService.switchPrivacy(userEmail);
     }
@@ -148,6 +148,12 @@ public class UsersController {
         User user  =iUserService.getUserDetails(userEmail);
         user.setAssociatedBusinessEmail("");
         return iUserService.addUser(user);
+    }
+
+    @GetMapping("/isBusiness")
+    Boolean isBusiness(@RequestHeader("username") String userEmail){
+        User user = iUserService.getUserDetails(userEmail);
+        return user == null;
     }
 
 

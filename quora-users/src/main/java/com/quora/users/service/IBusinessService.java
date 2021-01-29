@@ -6,4 +6,5 @@ public interface IBusinessService {
     Business addBusiness(Business business);
 
     Business getBusinessDetails(String businessEmail);
+
 }

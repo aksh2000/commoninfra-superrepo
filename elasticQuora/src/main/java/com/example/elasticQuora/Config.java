@@ -12,7 +12,7 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 
 @Configuration
 @EnableElasticsearchRepositories(basePackages = "com.example.elasticQuora")
-@ComponentScan(basePackages = { "com.example.elasticQuora" })
+@ComponentScan(basePackages = { "com.example.elasticQuora.Service/BusinessService" })
 public class Config {
     @Bean
     public RestHighLevelClient client() {
