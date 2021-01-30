@@ -13,7 +13,7 @@ import java.util.List;
 
 @Repository
 public interface QuizLeaderBoardRepository extends JpaRepository<QuizLeaderBoard, Long> {
-    List<QuizLeaderBoard> findByQuizId(Long quizId);
+    List<QuizLeaderBoard> findByQuizIdOrderByTotalScoreDesc(Long quizId);
     QuizLeaderBoard findByQuizIdAndUserId(Long quizId, String userId);
 
     @Transactional

@@ -73,7 +73,7 @@ public class QuizServiceImpl implements IQuizService {
 
     @Override
     public List<LeaderBoardList> getLeaderBoard(Long quizId) {
-        List<QuizLeaderBoard> quizLeaderBoards = quizLeaderBoardRepository.findByQuizId(quizId);
+        List<QuizLeaderBoard> quizLeaderBoards = quizLeaderBoardRepository.findByQuizIdOrderByTotalScoreDesc(quizId);
         List<LeaderBoardList> leaderBoardLists = new ArrayList<>();
         List<User> users = new ArrayList<>();
 
@@ -82,7 +82,11 @@ public class QuizServiceImpl implements IQuizService {
             LeaderBoardList leaderBoardList = new LeaderBoardList();
             leaderBoardList.setUser(user);
             leaderBoardList.setScore(quizLeaderBoard.getTotalScore());
-            leaderBoardLists.add(leaderBoardList);
+            if(user!=null){
+                leaderBoardLists.add(leaderBoardList);
+            }else {
+                System.out.println(quizLeaderBoard.getUserId());
+            }
         }
         return leaderBoardLists;
     }

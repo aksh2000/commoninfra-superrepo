@@ -15,9 +15,9 @@ public class Methods {
         boolean isCorrect = questionDetails.getRightAnswer().equals(quizResponses.getAnswer());
         double score = 0;
         if(isCorrect){
-            score = 1/quizResponses.getResponseTime()+questionDetails.getLevel()+1;
+            score = 1/(quizResponses.getResponseTime()+0.1)+questionDetails.getLevel()+1;
         }
-        System.out.println(quizResponses.getQuizId()+ " " + quizResponses.getAnswer()+ " "+ questionDetails.getRightAnswer());
+        System.out.println(quizResponses.getQuizId()+ " User's Answer= " + quizResponses.getAnswer()+ "Correct Answer= "+ questionDetails.getRightAnswer());
         System.out.println(quizResponses.getResponseTime() + " isCorrect= "+ isCorrect + " Score =  "+ score);
 
         return score;

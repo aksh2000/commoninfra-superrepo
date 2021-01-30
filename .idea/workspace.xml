@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6ab4801c-17bf-4881-b514-01dc8379eaa7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-user/src/main/java/com/cms/user/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/methods/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/methods/Methods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizLeaderBoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/repository/QuizLeaderBoardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cms-quiz/src/main/java/com/cms/quiz/service/implementation/QuizServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CmsUserApplication" />
         <item itemvalue="Application.CmsQuizApplication" />
+        <item itemvalue="Application.CmsUserApplication" />
         <item itemvalue="Application.CmsAdminApplication" />
       </list>
     </recent_temporary>
@@ -234,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611924618503</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="--cms updated xml files">
+      <created>1611977787997</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1611977787997</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -255,7 +264,8 @@
     <MESSAGE value="--cms added main leaderboard api" />
     <MESSAGE value="--cms changed restTemplate apis to localhost -- removed @LoadBalanced" />
     <MESSAGE value="--cms updated iml files" />
-    <option name="LAST_COMMIT_MESSAGE" value="--cms updated iml files" />
+    <MESSAGE value="--cms updated xml files" />
+    <option name="LAST_COMMIT_MESSAGE" value="--cms updated xml files" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/common_infra$QuoraUsersApplication.ic" NAME="QuoraUsersApplication Coverage Results" MODIFIED="1611849935493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
