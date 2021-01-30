@@ -12,7 +12,7 @@ public interface IUserService {
 
     Boolean doesUserExist(String userId);
 
-    Boolean doesUserExist(String userId);
+//    Boolean doesUserExist(String userId);
 
     //ProfileDetails getUserDetailsWithRating(String userId);
 }
