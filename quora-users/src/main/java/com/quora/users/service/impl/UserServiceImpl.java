@@ -19,6 +19,11 @@ public class UserServiceImpl implements IUserService {
     UserRepository userRepository;
 
     @Override
+    public List<User> getPublicUser() {
+        return userRepository.getPublicUser();
+    }
+
+    @Override
     public User addUser(User user) {
         Business business = new Business();
         business.setBusinessEmail(user.getUserEmail());
@@ -38,7 +43,13 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public User getUserDetails(String userEmail) {
-        return userRepository.findById(userEmail).get();
+        try {
+            return userRepository.findById(userEmail).get();
+        }
+        catch(Exception e){
+
+        }
+        return null;
     }
 
     @Override
@@ -49,5 +60,10 @@ public class UserServiceImpl implements IUserService {
     @Override
     public List<User> findByAssociatedBusinessEmail(String associatedBusinessEmail) {
         return userRepository.findByAssociatedBusinessEmail(associatedBusinessEmail);
+    }
+
+    @Override
+    public String getBusinessEmail(String userEmail) {
+        return userRepository.getBusinessEmail(userEmail);
     }
 }

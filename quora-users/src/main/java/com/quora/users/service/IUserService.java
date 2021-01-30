@@ -5,6 +5,8 @@ import com.quora.users.entity.User;
 import java.util.List;
 
 public interface IUserService {
+    List<User> getPublicUser();
+
     User addUser(User user);
 
     User getUserDetails(String userEmail);
@@ -12,4 +14,6 @@ public interface IUserService {
     Integer switchPrivacy(String userEmail);
 
     List<User> findByAssociatedBusinessEmail(String associatedBusinessEmail);
+
+    String getBusinessEmail(String userEmail);
 }

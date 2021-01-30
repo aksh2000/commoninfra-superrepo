@@ -17,4 +17,10 @@ public interface UserRepository extends JpaRepository<User, String> {
     Integer switchPrivacy(String userEmail);
 
     List<User> findByAssociatedBusinessEmail(String associatedBusinessEmail);
+
+    @Query(value = "select * from quora_users where is_private = '0'",nativeQuery = true)
+    List<User> getPublicUser();
+
+    @Query(value = "select associated_business_email from quora_users where user_email=?1",nativeQuery = true)
+    String getBusinessEmail(String userEmail);
 }

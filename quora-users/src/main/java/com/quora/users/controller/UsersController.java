@@ -1,5 +1,6 @@
 package com.quora.users.controller;
 
+import com.quora.users.dto.Count;
 import com.quora.users.entity.Business;
 import com.quora.users.entity.Engagement;
 import com.quora.users.entity.User;
@@ -50,6 +51,12 @@ public class UsersController {
 
     @GetMapping("/getBusinessDetails")
     Business getBusinessDetails(@RequestHeader("username") String businessEmail){
+
+        return iBusinessService.getBusinessDetails(businessEmail);
+    }
+    @GetMapping("/getBusinessDetails/{userEmail}")
+    Business getBusinessDetail(@PathVariable("userEmail") String userEmail){
+        String businessEmail = iUserService.getBusinessEmail(userEmail);
         return iBusinessService.getBusinessDetails(businessEmail);
     }
 
@@ -158,6 +165,14 @@ public class UsersController {
         return iEngagementService.getFollowersCount(userBusinessEmail);
     }
 
+    @GetMapping(value= "/getUserCount")
+    Count getUserCount(@RequestHeader("username") String userEmail){
+        Count count = new Count();
+        count.setFollowers(iEngagementService.getFollowersCount(userEmail));
+        count.setFollowings(iEngagementService.getFollowingCount(userEmail));
+        return count;
+    }
+
     @GetMapping("/getFollowingCount")
     Long getFollowingCount(@RequestHeader("username") String secondaryEmail){
         return iEngagementService.getFollowingCount(secondaryEmail);
@@ -165,7 +180,11 @@ public class UsersController {
 
     @PutMapping("/addToTeam/{userEmail}")
     User addToTeam(@RequestHeader("username") String associatedBusinessEmail, @PathVariable("userEmail") String userEmail){
+        iUserService.getUserDetails(userEmail);
         User user = iUserService.getUserDetails(userEmail);
+        if(user.getAssociatedBusinessEmail() != null){
+            return null;
+        }
         user.setAssociatedBusinessEmail(associatedBusinessEmail);
         return iUserService.addUser(user);
     }
@@ -184,8 +203,11 @@ public class UsersController {
 
     @GetMapping("/isBusiness")
     Boolean isBusiness(@RequestHeader("username") String userEmail){
-        User user = iUserService.getUserDetails(userEmail);
-        return user == null;
+
+            User user = iUserService.getUserDetails(userEmail);
+            if(user==null)
+                return true;
+        return false;
     }
 
     @GetMapping("/getFollowStatus/{userBusinessEmail}")
@@ -196,6 +218,10 @@ public class UsersController {
     @GetMapping("/unfollowUser/{userBusinessEmail}")
     Integer unfollowUser(@PathVariable("userBusinessEmail")String userBusinessEmail, @RequestHeader("username")String secondaryEmail) {
         return iEngagementService.rejectFollowRequests(secondaryEmail, userBusinessEmail);
+    }
+    @GetMapping("/getPublicUsers")
+    List<User> getPublicUser(){
+        return iUserService.getPublicUser();
     }
 
 }
